@@ -1,0 +1,81 @@
+/* Custom Styles for Shimisei Landing Page */
+
+/* Font Family - Fallback */
+body {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Tailwind Config */
+@layer utilities {
+    /* Custom colors if needed */
+}
+
+/* Header Styling */
+header {
+    transition: all 0.3s ease;
+}
+
+/* Back to Top Button Animation */
+#backToTop {
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#backToTop:hover {
+    transform: translateY(-5px);
+}
+
+/* Image Optimization */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Section Spacing */
+section {
+    scroll-margin-top: 80px;
+}
+
+/* Signature Section Background */
+#signature {
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-color: #f5f5f5;
+}
+
+@media (min-width: 640px) {
+    #signature {
+        background-size: cover;
+        background-position: center;
+        background-color: transparent;
+    }
+}
+
+/* Custom Scrollbar (Optional) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
