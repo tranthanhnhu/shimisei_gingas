@@ -34,6 +34,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/favicon.png">
+    
+    <!-- Preload Critical Images -->
+    <link rel="preload" as="image" href="images/hero_model.png" fetchpriority="high">
 </head>
 <body class="font-sans antialiased">
     <!-- Header -->
@@ -56,10 +59,10 @@
             </div>
 
             <!-- Section 1: Hero Section -->
-            <section id="hero" class="relative min-h-[50vh] md:min-h-screen flex items-center overflow-visible">
+            <section id="hero" class="relative min-h-[50vh] md:min-h-screen flex items-center overflow-visible bg-gray-100">
                 <!-- Background Image -->
                 <div class="absolute inset-0 z-20 mt-[20px]">
-                    <img src="images/hero_model.png" alt="Hero Model" class="w-full h-full object-cover object-[64%_center] md:object-cover md:object-center">
+                    <img src="images/hero_model.png" alt="Hero Model" class="w-full h-full object-cover object-[64%_center] md:object-cover md:object-center" loading="eager" fetchpriority="high" decoding="async">
                 </div>
                 
                 <!-- Overlay -->
