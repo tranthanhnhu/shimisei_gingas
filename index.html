@@ -29,7 +29,7 @@
     </script>
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1.0.1">
 </head>
 <body class="font-sans antialiased">
     <!-- Header -->
@@ -45,17 +45,17 @@
         <div class="relative">
             <!-- Mini Bubbles Overlay (covers both Section 1 & 2) -->
             <div class="absolute inset-0 z-30 pointer-events-none">
-                <img src="images/mini_bubbles_1.png" alt="" class="absolute top-[45%] left-6 md:left-12 w-full opacity-70">
-                <!-- <img src="images/mini_bubbles_2.png" alt="" class="absolute top-[55%] right-6 md:right-16 w-1/2 opacity-70"> -->
+                <img src="images/mini_bubbles_1.png" alt="" class="absolute top-[43%] left-6 md:left-12 w-full opacity-70">
+                <img src="images/mini_bubbles_2.png" alt="" class="absolute top-[105%] md:top-[80%] right-6 md:right-16 w-1/2 opacity-30">
                 <!-- push one bubble down to overlap Section 2 area -->
-                <!-- <img src="images/mini_bubbles_3.png" alt="" class="absolute top-[70vh] md:top-[78vh] left-1/3 w-1/2 opacity-65"> -->
+                <img src="images/mini_bubbles_3.png" alt="" class="absolute top-[108vh] md:top-[280vh] left-6 w-1/2 opacity-20">
             </div>
 
             <!-- Section 1: Hero Section -->
             <section id="hero" class="relative min-h-[50vh] md:min-h-screen flex items-center overflow-visible">
                 <!-- Background Image -->
                 <div class="absolute inset-0 z-20 mt-[20px]">
-                    <img src="images/hero_model.png.png" alt="Hero Model" class="w-full h-full object-cover object-[64%_center] md:object-cover md:object-center">
+                    <img src="images/hero_model.png" alt="Hero Model" class="w-full h-full object-cover object-[64%_center] md:object-cover md:object-center">
                 </div>
                 
                 <!-- Overlay -->
@@ -71,9 +71,9 @@
                         
                         <!-- Slogan -->
                         <div class="mb-6 md:mb-8">
-                            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black leading-tight"> 内側からあふれる</h2>
-                            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black leading-tight">[透明感]と[自信]</h2>
-                            <p class="text-lg sm:text-base md:text-xl text-black mt-2">Shimiseiは飲む美容。</p>
+                            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-black leading-tight"> 内側からあふれる</h2>
+                            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-black leading-tight">[透明感]と[自信]</h2>
+                            <p class="text-lg sm:text-base md:text-xl lg:text-4xl text-black mt-2">Shimiseiは飲む美容。</p>
                         </div>
                     </div>
                 </div>
@@ -83,9 +83,9 @@
             <section id="product-feature" class="relative pt-0 pb-10 md:pb-16 bg-transparent">
                 <!-- Bubble should be smaller and overlap Section 1 & 3 like design -->
                 <div class="container mx-auto px-4">
-                    <div class="relative z-40 -mt-8 md:-mt-16 -mb-24 md:-mb-24 mx-auto w-full max-w-[300px] sm:max-w-[380px] md:max-w-[480px] pointer-events-none" data-aos="fade-in">
+                    <div class="relative z-40 -mt-8 md:-mt-16 -mb-24 md:-mb-24 mx-auto w-full max-w-[300px] sm:max-w-[380px] md:max-w-[480px] pointer-events-none overflow-hidden" data-aos="fade-in">
                         <div class="relative pointer-events-auto">
-                            <img src="images/bubbles.png" alt="Bubble" class="w-full h-auto ml-6 md:ml-8">
+                            <img src="images/bubbles.png" alt="Bubble" class="w-full h-auto ml-3 md:ml-6 lg:ml-8">
                             <div class="absolute inset-0 flex items-center justify-center pointer-events-none -mt-[20px]">
                                 <div class="text-center space-y-2 md:space-y-3 px-8 md:px-14 pointer-events-none">
                                     <p class="text-xs sm:text-sm md:text-base text-gray-800 leading-relaxed font-medium">
@@ -169,27 +169,27 @@
         </section>
 
         <!-- Section 4: Signature Section -->
-        <section id="signature" class="relative min-h-[400px] sm:min-h-[450px] md:min-h-[600px] flex items-center justify-center overflow-hidden" style="background-image: url('images/hero_model_2.png');">
-            <!-- Overlay -->
-            <div class="absolute inset-0 bg-black/30 md:bg-black/20 z-10"></div>
-            
-            <!-- Content -->
-            <div class="relative z-20 container mx-auto px-4 py-12 text-left md:text-center">
-                <div data-aos="fade-in" data-aos-delay="100">
-                    <!-- Text Content -->
-                    <div class="mb-6 md:mb-8">
-                        <p class="text-black text-sm md:text-xl lg:text-2xl font-light mb-4 drop-shadow-lg">
-                            内側からあふれる「透明感」と「自信」
-                        </p>
+        <!-- <section id="signature" class="relative py-12 md:py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                    <div class="flex-1 w-full md:w-auto text-left" data-aos="fade-right" data-aos-delay="100">
+                        <div class="mb-6 md:mb-8">
+                            <p class="text-black text-sm md:text-xl lg:text-2xl font-light mb-4">
+                                内側からあふれる「透明感」と「自信」
+                            </p>
+                        </div>
+                        
+                        <div class="flex justify-start">
+                            <img src="images/sign.png" alt="Signature" class="max-w-[200px] md:max-w-xs lg:max-w-md h-auto">
+                        </div>
                     </div>
                     
-                    <!-- Signature -->
-                    <div class="flex justify-start md:justify-center">
-                        <img src="images/sign.png" alt="Signature" class="max-w-[200px] md:max-w-xs lg:max-w-md h-auto drop-shadow-lg">
+                    <div class="flex-1 w-full md:w-auto flex justify-end" data-aos="fade-left" data-aos-delay="200">
+                        <img src="images/hero_model_2.png" alt="Woman" class="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain">
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Section 5: Voice Section -->
         <section id="voice" class="py-12 md:py-20 bg-white">
@@ -200,97 +200,97 @@
                 </div>
                 
                 <!-- Grid -->
-                <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto mb-8">
+                <div class="grid grid-cols-2 gap-4 md:gap-6 max-w-6xl mx-auto mb-8">
                     <!-- Mock Card 1 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="aspect-square bg-gray-200">
-                            <img src="https://via.placeholder.com/400x400?text=Image+1" alt="Testimonial 1" class="w-full h-full object-cover">
+                        <div class="aspect-square bg-gray-200 overflow-hidden">
+                            <img src="images/voice_1.png" alt="Testimonial 1" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
-                                <div class="w-8 h-8 rounded-full bg-gray-300 mr-2"></div>
-                                <span class="text-sm font-medium text-gray-700">your_name</span>
+                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm font-medium text-gray-700">田中 美咲</span>
                             </div>
-                            <p class="text-sm text-gray-600">アキストテキストテキストテキスト</p>
+                            <p class="text-sm text-gray-600">飲み始めてから肌の調子が良くなりました。うるおいを感じます。</p>
                         </div>
                     </div>
                     
                     <!-- Mock Card 2 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="aspect-square bg-gray-200">
-                            <img src="https://via.placeholder.com/400x400?text=Image+2" alt="Testimonial 2" class="w-full h-full object-cover">
+                        <div class="aspect-square bg-gray-200 overflow-hidden">
+                            <img src="images/voice_2.png" alt="Testimonial 2" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
-                                <div class="w-8 h-8 rounded-full bg-gray-300 mr-2"></div>
-                                <span class="text-sm font-medium text-gray-700">your_name</span>
+                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm font-medium text-gray-700">佐藤 花子</span>
                             </div>
-                            <p class="text-sm text-gray-600">アキストテキストテキストテキスト</p>
+                            <p class="text-sm text-gray-600">毎日続けやすいサイズで、効果を実感しています。</p>
                         </div>
                     </div>
                     
                     <!-- Mock Card 3 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="aspect-square bg-gray-200">
-                            <img src="https://via.placeholder.com/400x400?text=Image+3" alt="Testimonial 3" class="w-full h-full object-cover">
+                        <div class="aspect-square bg-gray-200 overflow-hidden">
+                            <img src="images/voice_3.png" alt="Testimonial 3" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
-                                <div class="w-8 h-8 rounded-full bg-gray-300 mr-2"></div>
-                                <span class="text-sm font-medium text-gray-700">your_name</span>
+                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm font-medium text-gray-700">鈴木 さくら</span>
                             </div>
-                            <p class="text-sm text-gray-600">アキストテキストテキストテキスト</p>
+                            <p class="text-sm text-gray-600">透明感がアップして、自信が持てるようになりました。</p>
                         </div>
                     </div>
                     
                     <!-- Mock Card 4 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="aspect-square bg-gray-200">
-                            <img src="https://via.placeholder.com/400x400?text=Image+4" alt="Testimonial 4" class="w-full h-full object-cover">
+                        <div class="aspect-square bg-gray-200 overflow-hidden">
+                            <img src="images/voice_4.png" alt="Testimonial 4" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
-                                <div class="w-8 h-8 rounded-full bg-gray-300 mr-2"></div>
-                                <span class="text-sm font-medium text-gray-700">your_name</span>
+                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm font-medium text-gray-700">山田 みゆき</span>
                             </div>
-                            <p class="text-sm text-gray-600">アキストテキストテキストテキスト</p>
+                            <p class="text-sm text-gray-600">乾燥が気にならなくなり、ハリも感じられます。</p>
                         </div>
                     </div>
                     
                     <!-- Mock Card 5 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="500">
-                        <div class="aspect-square bg-gray-200">
-                            <img src="https://via.placeholder.com/400x400?text=Image+5" alt="Testimonial 5" class="w-full h-full object-cover">
+                    <!-- <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="aspect-square bg-gray-200 overflow-hidden">
+                            <img src="images/voice_5.png" alt="Testimonial 5" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
-                                <div class="w-8 h-8 rounded-full bg-gray-300 mr-2"></div>
-                                <span class="text-sm font-medium text-gray-700">your_name</span>
+                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm font-medium text-gray-700">高橋 あかり</span>
                             </div>
-                            <p class="text-sm text-gray-600">アキストテキストテキストテキスト</p>
+                            <p class="text-sm text-gray-600">日本製で安心して飲めます。続けたいと思います。</p>
                         </div>
-                    </div>
+                    </div> -->
                     
                     <!-- Mock Card 6 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="600">
-                        <div class="aspect-square bg-gray-200">
-                            <img src="https://via.placeholder.com/400x400?text=Image+6" alt="Testimonial 6" class="w-full h-full object-cover">
+                    <!-- <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="600">
+                        <div class="aspect-square bg-gray-200 overflow-hidden">
+                            <img src="images/voice_6.png" alt="Testimonial 6" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
-                                <div class="w-8 h-8 rounded-full bg-gray-300 mr-2"></div>
-                                <span class="text-sm font-medium text-gray-700">your_name</span>
+                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm font-medium text-gray-700">伊藤 ゆい</span>
                             </div>
-                            <p class="text-sm text-gray-600">アキストテキストテキストテキスト</p>
+                            <p class="text-sm text-gray-600">年齢による変化が気になっていましたが、改善されました。</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 
                 <!-- More Button -->
                 <div class="text-center mt-8">
-                    <button class="inline-flex items-center px-6 py-3 bg-gray-200 hover:bg-gray-300 rounded-lg text-gray-700 font-medium transition-colors duration-200">
+                    <button class="inline-flex items-center px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg text-gray-700 text-sm font-medium transition-colors duration-200">
                         more
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </button>
@@ -300,7 +300,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#E8E8E8] py-8 md:py-12">
+    <footer class="py-8 md:py-12 bg-[#F5E6E0]"> <!-- bg-[#E8E8E8] -->
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
                 <!-- Logo & Brand -->
