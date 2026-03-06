@@ -1,0 +1,12 @@
+{
+  "name": "shimisei-landing",
+  "version": "1.0.0",
+  "description": "SHIMISEI Landing Page",
+  "scripts": {
+    "build-css": "tailwindcss -i ./input.css -o ./styles.css --minify",
+    "watch-css": "tailwindcss -i ./input.css -o ./styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
