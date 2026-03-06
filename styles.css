@@ -48,6 +48,16 @@ img {
     height: auto;
 }
 
+/* Performance: Reduce repaints */
+img[loading="lazy"] {
+    content-visibility: auto;
+}
+
+/* Performance: Optimize animations */
+[data-aos] {
+    will-change: transform, opacity;
+}
+
 /* Section Spacing */
 section {
     scroll-margin-top: 80px;

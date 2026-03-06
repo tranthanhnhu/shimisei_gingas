@@ -27,13 +27,15 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://shimisei.com/">
     
-    <!-- Google Fonts - Noto Sans JP -->
+    <!-- Google Fonts - Noto Sans JP (Optimized) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
     
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS CSS (Defer) -->
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></noscript>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,8 +51,9 @@
         }
     </script>
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Custom CSS (Preload) -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -59,10 +62,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="shortcut icon" href="images/favicon.ico">
     
-    <!-- Preload Critical Images -->
-    <!-- <link rel="preload" as="image" href="images/hero_model.png" fetchpriority="high"> -->
+    <!-- Preload Critical Resources -->
     <link rel="preload" as="image" href="images/hero_model.webp" fetchpriority="high">
-    <link rel="preload" as="image" href="images/product_box_main.png" fetchpriority="high">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
 </head>
 <body class="font-sans antialiased">
     <!-- Header -->
@@ -78,10 +83,10 @@
         <div class="relative">
             <!-- Mini Bubbles Overlay (covers both Section 1 & 2) -->
             <div class="absolute inset-0 z-30 pointer-events-none">
-                <img src="images/mini_bubbles_1.png" alt="" class="absolute top-[43%] left-6 md:left-12 w-full opacity-70">
-                <img src="images/mini_bubbles_2.png" alt="" class="absolute top-[105%] md:top-[80%] right-6 md:right-16 w-1/2 opacity-30">
+                <img src="images/mini_bubbles_1.png" alt="" class="absolute top-[43%] left-6 md:left-12 w-full opacity-70" loading="lazy" decoding="async">
+                <img src="images/mini_bubbles_2.png" alt="" class="absolute top-[105%] md:top-[80%] right-6 md:right-16 w-1/2 opacity-30" loading="lazy" decoding="async">
                 <!-- push one bubble down to overlap Section 2 area -->
-                <img src="images/mini_bubbles_3.png" alt="" class="absolute top-[108vh] md:top-[280vh] left-6 w-1/2 opacity-20">
+                <img src="images/mini_bubbles_3.png" alt="" class="absolute top-[108vh] md:top-[280vh] left-6 w-1/2 opacity-20" loading="lazy" decoding="async">
             </div>
 
             <!-- Section 1: Hero Section -->
@@ -119,7 +124,7 @@
                 <div class="container mx-auto px-4">
                     <div class="relative z-40 -mt-8 md:-mt-16 -mb-24 md:-mb-24 mx-auto w-full max-w-[300px] sm:max-w-[380px] md:max-w-[480px] pointer-events-none overflow-hidden" data-aos="fade-in">
                         <div class="relative pointer-events-auto">
-                            <img src="images/bubbles.png" alt="Bubble" class="w-full h-auto ml-3 md:ml-6 lg:ml-8">
+                            <img src="images/bubbles.png" alt="Bubble" class="w-full h-auto ml-3 md:ml-6 lg:ml-8" loading="lazy" decoding="async">
                             <div class="absolute inset-0 flex items-center justify-center pointer-events-none -mt-[20px]">
                                 <div class="text-center space-y-2 md:space-y-3 px-8 md:px-14 pointer-events-none">
                                     <p class="text-xs sm:text-sm md:text-base text-gray-800 leading-relaxed font-medium">
@@ -148,21 +153,21 @@
                 <div class="mb-12 md:mb-16" data-aos="fade-up">
                     <!-- Title -->
                     <div class="mb-6 md:mb-8 text-center">
-                        <img src="images/strength.png" alt="STRENGTH こだわり" class="mx-auto max-w-[250px] md:max-w-xs">
+                        <img src="images/strength.png" alt="STRENGTH こだわり" class="mx-auto max-w-[250px] md:max-w-xs" loading="lazy" decoding="async">
                     </div>
                     
                     <!-- Product Box and Strength Items -->
                     <div class="flex flex-row items-center md:items-start gap-3 md:gap-8 justify-center">
                         <!-- Product Box - Left -->
                         <div class="flex-shrink-0 w-[120px] sm:w-[170px] md:w-auto" data-aos="fade-left" data-aos-delay="100">
-                            <img src="images/product_box_main.png" alt="SHIMISEI Product Box" class="w-full md:max-w-md mx-auto">
+                            <img src="images/product_box_main.png" alt="SHIMISEI Product Box" class="w-full md:max-w-md mx-auto" loading="lazy" decoding="async">
                         </div>
 
                         <!-- Strength Items - Right -->
                         <div class="flex-1 min-w-0 space-y-2 sm:space-y-3 md:space-y-4" data-aos="fade-right" data-aos-delay="200">
-                            <img src="images/strength_1.png" alt="Strength 1" class="w-full">
-                            <img src="images/strength_2.png" alt="Strength 2" class="w-full">
-                            <img src="images/strength_3.png" alt="Strength 3" class="w-full">
+                            <img src="images/strength_1.png" alt="Strength 1" class="w-full" loading="lazy" decoding="async">
+                            <img src="images/strength_2.png" alt="Strength 2" class="w-full" loading="lazy" decoding="async">
+                            <img src="images/strength_3.png" alt="Strength 3" class="w-full" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -171,21 +176,21 @@
                 <div data-aos="fade-up" data-aos-delay="300">
                     <!-- Title -->
                     <div class="mb-6 md:mb-8 text-center">
-                        <img src="images/recommend.png" alt="RECOMMEND こんな方におすすめ" class="mx-auto max-w-[250px] md:max-w-xs">
+                        <img src="images/recommend.png" alt="RECOMMEND こんな方におすすめ" class="mx-auto max-w-[250px] md:max-w-xs" loading="lazy" decoding="async">
                     </div>
                     
                     <!-- Recommend Items and Product Box - 2 columns -->
                     <div class="flex flex-row items-center md:items-start gap-3 sm:gap-4 md:gap-8 justify-center mb-8">
                         <!-- Recommend Items - Left -->
                         <div class="flex-1 min-w-0 space-y-2 sm:space-y-3 md:space-y-4" data-aos="fade-right" data-aos-delay="100">
-                            <img src="images/recommend_1.png" alt="Recommend 1" class="w-full">
-                            <img src="images/recommend_2.png" alt="Recommend 2" class="w-full">
-                            <img src="images/recommend_3.png" alt="Recommend 3" class="w-full">
+                            <img src="images/recommend_1.png" alt="Recommend 1" class="w-full" loading="lazy" decoding="async">
+                            <img src="images/recommend_2.png" alt="Recommend 2" class="w-full" loading="lazy" decoding="async">
+                            <img src="images/recommend_3.png" alt="Recommend 3" class="w-full" loading="lazy" decoding="async">
                         </div>
                         
                         <!-- Product Box - Right -->
                         <div class="flex-shrink-0 w-[140px] sm:w-[200px] md:w-auto" data-aos="fade-left" data-aos-delay="200">
-                            <img src="images/product_box.png" alt="SHIMISEI Product Box" class="w-full md:max-w-md mx-auto">
+                            <img src="images/product_box.png" alt="SHIMISEI Product Box" class="w-full md:max-w-md mx-auto" loading="lazy" decoding="async">
                         </div>
                     </div>
                     
@@ -230,7 +235,7 @@
             <div class="container mx-auto px-4">
                 <!-- Title -->
                 <div class="mb-8 md:mb-12 text-center">
-                    <img src="images/voice.png" alt="VOICE モニターの声" class="mx-auto max-w-[250px] md:max-w-xs">
+                    <img src="images/voice.png" alt="VOICE モニターの声" class="mx-auto max-w-[250px] md:max-w-xs" loading="lazy" decoding="async">
                 </div>
                 
                 <!-- Grid -->
@@ -238,11 +243,11 @@
                     <!-- Mock Card 1 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="100">
                         <div class="aspect-square bg-gray-200 overflow-hidden">
-                            <img src="images/voice_1.png" alt="Testimonial 1" class="w-full h-full object-cover">
+                            <img src="images/voice_1.png" alt="Testimonial 1" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
-                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2" loading="lazy" decoding="async">
                                 <span class="text-sm font-medium text-gray-700">田中 美咲</span>
                             </div>
                             <p class="text-sm text-gray-600">飲み始めてから肌の調子が良くなりました。うるおいを感じます。</p>
@@ -252,11 +257,11 @@
                     <!-- Mock Card 2 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
                         <div class="aspect-square bg-gray-200 overflow-hidden">
-                            <img src="images/voice_2.png" alt="Testimonial 2" class="w-full h-full object-cover">
+                            <img src="images/voice_2.png" alt="Testimonial 2" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
-                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2" loading="lazy" decoding="async">
                                 <span class="text-sm font-medium text-gray-700">佐藤 花子</span>
                             </div>
                             <p class="text-sm text-gray-600">毎日続けやすいサイズで、効果を実感しています。</p>
@@ -266,11 +271,11 @@
                     <!-- Mock Card 3 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="300">
                         <div class="aspect-square bg-gray-200 overflow-hidden">
-                            <img src="images/voice_3.png" alt="Testimonial 3" class="w-full h-full object-cover">
+                            <img src="images/voice_3.png" alt="Testimonial 3" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
-                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2" loading="lazy" decoding="async">
                                 <span class="text-sm font-medium text-gray-700">鈴木 さくら</span>
                             </div>
                             <p class="text-sm text-gray-600">透明感がアップして、自信が持てるようになりました。</p>
@@ -280,11 +285,11 @@
                     <!-- Mock Card 4 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="400">
                         <div class="aspect-square bg-gray-200 overflow-hidden">
-                            <img src="images/voice_4.png" alt="Testimonial 4" class="w-full h-full object-cover">
+                            <img src="images/voice_4.png" alt="Testimonial 4" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
-                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <img src="images/product_box.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover mr-2" loading="lazy" decoding="async">
                                 <span class="text-sm font-medium text-gray-700">山田 みゆき</span>
                             </div>
                             <p class="text-sm text-gray-600">乾燥が気にならなくなり、ハリも感じられます。</p>
@@ -398,10 +403,10 @@
         </svg>
     </button>
 
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- AOS JS (Defer) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     
-    <!-- Custom JS -->
-    <script src="script.js"></script>
+    <!-- Custom JS (Defer) -->
+    <script src="script.js" defer></script>
 </body>
 </html>
