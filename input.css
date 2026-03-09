@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Local Fonts - Noto Sans JP (Japanese charset) */
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('./fonts/noto-sans-jp-v56-japanese-300.woff2') format('woff2');
+    unicode-range: U+3000-9FFF, U+FF00-FFEF, U+4E00-9FAF;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./fonts/noto-sans-jp-v56-japanese-regular.woff2') format('woff2');
+    unicode-range: U+3000-9FFF, U+FF00-FFEF, U+4E00-9FAF;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('./fonts/noto-sans-jp-v56-japanese-500.woff2') format('woff2');
+    unicode-range: U+3000-9FFF, U+FF00-FFEF, U+4E00-9FAF;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('./fonts/noto-sans-jp-v56-japanese-700.woff2') format('woff2');
+    unicode-range: U+3000-9FFF, U+FF00-FFEF, U+4E00-9FAF;
+}
+
 /* Custom Styles for Shimisei Landing Page */
 @layer base {
     body {

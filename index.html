@@ -27,10 +27,7 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://shimisei.jp/">
     
-    <!-- Google Fonts - Noto Sans JP -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Local Fonts - Noto Sans JP -->
     
     <!-- AOS CSS (Defer) -->
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -49,8 +46,8 @@
     <!-- Preload Critical Resources -->
     <link rel="preload" as="image" href="images/hero_model.webp" fetchpriority="high">
     <link rel="preload" as="style" href="styles.css">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preload" as="font" href="fonts/noto-sans-jp-v56-japanese-regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/noto-sans-jp-v56-japanese-700.woff2" type="font/woff2" crossorigin>
     <link rel="dns-prefetch" href="https://unpkg.com">
 </head>
 <body class="font-sans antialiased">
@@ -86,7 +83,7 @@
                 
                 <!-- Content -->
                 <div class="relative z-20 container mx-auto px-4 pt-14 pb-20 md:pt-20 md:pb-40 mt-16">
-                    <div class="max-w-2xl" data-aos="fade-up">
+                    <div class="max-w-2xl">
                         <!-- Logo -->
                         <!-- <div class="mb-5 md:mb-8">
                             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-3 md:mb-6">SHIMISEI</h1>
@@ -227,7 +224,7 @@
                     <!-- Mock Card 1 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="100">
                         <div class="aspect-square bg-gray-200 overflow-hidden">
-                            <img src="images/voice_1.png" alt="Testimonial 1" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="images/voice_1.webp" alt="Testimonial 1" class="w-full h-full object-cover object-center scale-110" loading="lazy" decoding="async">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
@@ -241,7 +238,7 @@
                     <!-- Mock Card 2 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
                         <div class="aspect-square bg-gray-200 overflow-hidden">
-                            <img src="images/voice_2.webp" alt="Testimonial 2" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="images/voice_2.webp" alt="Testimonial 2" class="w-full h-full object-cover object-center scale-110" loading="lazy" decoding="async">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
@@ -255,7 +252,7 @@
                     <!-- Mock Card 3 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="300">
                         <div class="aspect-square bg-gray-200 overflow-hidden">
-                            <img src="images/voice_3.png" alt="Testimonial 3" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="images/voice_3.png" alt="Testimonial 3" class="w-full h-full object-cover object-center scale-110" loading="lazy" decoding="async">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
@@ -269,7 +266,7 @@
                     <!-- Mock Card 4 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="400">
                         <div class="aspect-square bg-gray-200 overflow-hidden">
-                            <img src="images/voice_4.png" alt="Testimonial 4" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="images/voice_4.webp" alt="Testimonial 4" class="w-full h-full object-cover object-center scale-110" loading="lazy" decoding="async">
                         </div>
                         <div class="p-4">
                             <div class="flex items-center mb-2">
