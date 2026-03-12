@@ -49,6 +49,25 @@
     <link rel="preload" as="font" href="fonts/noto-sans-jp-v56-japanese-regular.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="fonts/noto-sans-jp-v56-japanese-700.woff2" type="font/woff2" crossorigin>
     <link rel="dns-prefetch" href="https://unpkg.com">
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+      }
+      .animate-float { animation: float 2s ease-in-out infinite; }
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-2px); }
+        75% { transform: translateX(2px); }
+      }
+      .animate-shake { animation: shake 0.4s ease-in-out infinite; }
+      .gallery-carousel__scroll::-webkit-scrollbar { display: none; }
+      .gallery-carousel__scroll { cursor: grab; }
+      .gallery-carousel__scroll.grabbing { cursor: grabbing; }
+      .gallery-carousel__scroll.grabbing * { pointer-events: none; }
+      .product-lineup__scroll::-webkit-scrollbar { display: none; }
+      .product-lineup__scroll { scrollbar-width: none; }
+    </style>
 </head>
 <body class="font-sans antialiased">
     <!-- Header -->
@@ -74,8 +93,8 @@
             <section id="hero" class="relative min-h-[50vh] md:min-h-screen flex items-center overflow-visible bg-gray-100">
                 <!-- Background Image -->
                 <div class="absolute inset-0 z-20 mt-[20px]">
-                    <!-- <img src="images/hero_model.png" alt="Hero Model" class="w-full h-full object-cover object-[64%_center] md:object-cover md:object-center" loading="eager" fetchpriority="high" decoding="async"> -->
-                    <img src="images/hero_model.webp" alt="Hero Model" class="w-full h-full object-cover object-[64%_center] md:object-cover md:object-center" loading="eager" fetchpriority="high" decoding="async">
+                    <img src="images/hero.webp" alt="Hero Model" class="w-full h-full object-cover object-[64%_center] md:object-cover md:object-center" loading="eager" fetchpriority="high" decoding="async">
+                    <!-- <img src="images/hero_modelBK.webp" alt="Hero Model" class="w-full h-full object-cover object-[64%_center] md:object-cover md:object-center" loading="eager" fetchpriority="high" decoding="async"> -->
                 </div>
                 
                 <!-- Overlay -->
@@ -279,7 +298,7 @@
                     <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                         <div class="w-full md:w-1/2" data-aos="fade-right">
                             <div class="relative bg-gray-200 rounded-lg overflow-hidden">
-                                <img src="images/howtouse.png?v=1.3" alt="How to Use" class="w-full h-auto object-contain" loading="lazy" decoding="async">
+                                <img src="images/howtouse.jpg?v=1.1" alt="How to Use" class="w-full h-auto object-contain" loading="lazy" decoding="async">
                             </div>
                         </div>
                         
@@ -313,41 +332,47 @@
         </section>
 
         <!-- Section 7: Product Lineup -->
-        <section id="product-lineup" class="py-12 md:py-20 bg-white">
+        <section id="product-lineup" class="py-8 md:py-12 bg-white">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6 text-center" data-aos="fade-up">
                         選べる3タイプ
                     </h2>
                     
-                    <!-- Grid 3 columns -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8">
+                    <!-- PC: grid 3 cột / Mobile: slide ngang -->
+                    <div class="product-lineup__scroll flex md:grid md:grid-cols-3 gap-6 md:gap-8 mb-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none -mx-4 px-4 md:mx-0 md:px-0 items-stretch md:items-stretch">
                         <!-- Large Box -->
-                        <div class="bg-white border-2 border-[#F5E6E0] rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="mb-4">
-                                <img src="images/packaging_large.jpg" alt="180粒入り お得な大容量タイプ" class="w-full max-w-[180px] md:max-w-[240px] mx-auto" loading="lazy" decoding="async">
+                        <div class="flex-shrink-0 w-[85vw] max-w-[340px] md:w-auto md:max-w-none snap-center bg-white border-2 border-[#F5E6E0] rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 md:hover:scale-105 flex flex-col h-full" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="flex-shrink-0 w-full h-[200px] md:h-[240px] flex items-center justify-center mb-4 bg-gray-50/50 rounded overflow-hidden">
+                                <img src="images/packaging_large.jpg" alt="180粒入り お得な大容量タイプ" class="max-w-full max-h-full w-auto h-auto object-contain" loading="lazy" decoding="async">
                             </div>
-                            <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3 whitespace-nowrap">180粒入り お得な大容量タイプ</h3>
-                            <p class="text-xs md:text-sm text-gray-700 mb-1 font-semibold whitespace-nowrap"> 1粒あたりのコストを最適化。リピーターの方、</p>
-                            <p class="text-xs md:text-sm text-gray-700 mb-1 font-semibold whitespace-nowrap">毎日うるおいのあるお肌を目指す方へ</p>
+                            <div class="flex-1 flex flex-col justify-end min-h-[120px] md:min-h-[110px]">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3 whitespace-nowrap">180粒入り お得な大容量タイプ</h3>
+                                <p class="text-xs md:text-sm text-gray-700 mb-1 font-semibold whitespace-nowrap"> 1粒あたりのコストを最適化。リピーターの方、</p>
+                                <p class="text-xs md:text-sm text-gray-700 mb-1 font-semibold whitespace-nowrap">毎日うるおいのあるお肌を目指す方へ</p>
+                            </div>
                         </div>
                         <!-- Small Box -->
-                        <div class="bg-white border-2 border-[#F5E6E0] rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="mb-4">
-                                <img src="images/packaging_small.jpg" alt="60粒入り 初めての方におすすめ" class="w-full max-w-[180px] md:max-w-[240px] mx-auto" loading="lazy" decoding="async">
+                        <div class="flex-shrink-0 w-[85vw] max-w-[340px] md:w-auto md:max-w-none snap-center bg-white border-2 border-[#F5E6E0] rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 md:hover:scale-105 flex flex-col h-full" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="flex-shrink-0 w-full h-[200px] md:h-[240px] flex items-center justify-center mb-4 bg-gray-50/50 rounded overflow-hidden">
+                                <img src="images/packaging_small.jpg" alt="60粒入り 初めての方におすすめ" class="max-w-full max-h-full w-auto h-auto object-contain" loading="lazy" decoding="async">
                             </div>
-                            <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3 whitespace-nowrap">60粒入り 初めての方におすすめ</h3>
-                            <p class="text-xs md:text-sm text-gray-700 mb-1 font-semibold whitespace-nowrap">SHIMISEIを十分に実感いただける容量です。</p>
-                            <p class="text-xs md:text-sm text-gray-700 mb-1 font-semibold whitespace-nowrap">違いを感じたいあなたにピッタリのタイプ</p>
+                            <div class="flex-1 flex flex-col justify-end min-h-[120px] md:min-h-[110px]">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3 whitespace-nowrap">60粒入り 初めての方におすすめ</h3>
+                                <p class="text-xs md:text-sm text-gray-700 mb-1 font-semibold whitespace-nowrap">SHIMISEIを十分に実感いただける容量です。</p>
+                                <p class="text-xs md:text-sm text-gray-700 mb-1 font-semibold whitespace-nowrap">違いを感じたいあなたにピッタリのタイプ</p>
+                            </div>
                         </div>
                         <!-- Zip Pouch -->
-                        <div class="bg-white border-2 border-[#F5E6E0] rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="mb-4">
-                                <img src="images/packaging_zip.jpg" alt="便利なジッパータイプ" class="w-full max-w-[180px] md:max-w-[240px] mx-auto" loading="lazy" decoding="async">
+                        <div class="flex-shrink-0 w-[85vw] max-w-[340px] md:w-auto md:max-w-none snap-center bg-white border-2 border-[#F5E6E0] rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 md:hover:scale-105 flex flex-col h-full" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="flex-shrink-0 w-full h-[200px] md:h-[240px] flex items-center justify-center mb-4 bg-gray-50/50 rounded overflow-hidden">
+                                <img src="images/packaging_zip.jpg" alt="便利なジッパータイプ" class="max-w-full max-h-full w-auto h-auto object-contain" loading="lazy" decoding="async">
                             </div>
-                            <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3 whitespace-nowrap">便利なジッパータイプ</h3>
-                            <p class="text-xs md:text-sm text-gray-700 mb-1 font-semibold whitespace-nowrap">コンパクトで持ち運びが便利なタイプ。</p>
-                            <p class="text-xs md:text-sm text-gray-700 mb-1 font-semibold whitespace-nowrap">旅行やトライアルに最適</p>
+                            <div class="flex-1 flex flex-col justify-end min-h-[120px] md:min-h-[110px]">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3 whitespace-nowrap">便利なジッパータイプ</h3>
+                                <p class="text-xs md:text-sm text-gray-700 mb-1 font-semibold whitespace-nowrap">コンパクトで持ち運びが便利なタイプ。</p>
+                                <p class="text-xs md:text-sm text-gray-700 mb-1 font-semibold whitespace-nowrap">旅行やトライアルに最適</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -355,17 +380,128 @@
         </section>
 
         <!-- Section: Skin comparison 50代 vs 20代 -->
-        <section id="skin-comparison" class="py-12 md:py-20 bg-[#F5E6E0]">
+        <section id="skin-comparison" class="py-8 md:py-12 bg-white">
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto">
-                    <p class="text-base md:text-lg text-gray-700 mb-6 md:mb-8 text-center" data-aos="fade-up">
-                        保湿クリームを丁寧に塗っても、内側の深い乾燥はなかなか解消されません。
-                    </p>
-                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center" data-aos="fade-up" data-aos-delay="100">
-                        50代と20代の肌表面の比較
-                    </h2>
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                        <img src="images/osmosis.jpg" alt="50代と20代の肌状態。角層の厚さと水分浸透の違い" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg" loading="lazy" decoding="async">
+                    <div class="space-y-14 md:space-y-20">
+                        <!-- Step 1: 50 vs 20 比較（大・揺れ）→ osmosis → 届きにくく → 2通りスキンケア画像 -->
+                        <div class="text-center" data-aos="fade-up">
+                            <p class="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed inline-block animate-shake mb-6">
+                                ご存知ですか？肌の表面は厚くなっていくのです。
+                            </p>
+                            <div class="mt-6">
+                                <img src="images/osmosis.jpg" alt="50代と20代の肌状態。角層の厚さと水分浸透の違い" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg" loading="lazy" decoding="async">
+                            </div>
+                            <p class="mt-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+                                このため、今のスキンケアでも届きにくくなっていくのです。
+                            </p>
+                            <div class="mt-6">
+                                <img src="images/flow_skin_care.jpg" alt="パック・塗るなどスキンケアのイメージ" class="w-full max-w-3xl mx-auto rounded-lg shadow-lg" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+
+                        <!-- Step 2: 40代以降HA減少 →  đồ thị -->
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                            <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                                気になるのは、40代以降ヒアルロン酸量が減少すること。
+                            </p>
+                            <div class="mt-6">
+                                <img src="images/flow_ha_decline.jpg" alt="年齢とともに減少するヒアルロン酸（40代・60代・70代のイメージ）" class="w-full max-w-3xl mx-auto rounded-lg shadow-lg" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+
+                        <!-- Step 3:  grid 2 dry skin -->
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="150">
+                            <p class="text-lg md:text-xl text-gray-800 font-semibold leading-relaxed inline-block animate-shake">
+                                もちろん減ったヒアルロン酸は自然には増えません。外から補う必要があります。
+                            </p>
+                            <p class="mt-4 text-lg md:text-xl text-gray-700 leading-relaxed">
+                                乾燥は年齢とともに深刻化します。
+                            </p>
+                            <p class="mt-2 text-lg md:text-xl text-gray-900 font-semibold leading-relaxed">
+                                それは<span class="text-blue-600 font-bold">不可避</span>です。
+                            </p>
+                            <div class="mt-6 grid grid-cols-2 gap-4 max-w-4xl mx-auto">
+                                <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+                                    <img src="images/flow_dry_skin.jpg" alt="乾燥・くすみ・カサカサ・目元口元（ヒアルロン酸不足の肌のイメージ）" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                                </div>
+                                <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+                                    <img src="images/flow_dry_skin_2.jpg" alt="50代以降の乾燥・肌のキメのイメージ" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <p class="mt-2 inline-block px-3 py-1.5 bg-gray-200/80 text-gray-800 text-sm font-medium rounded">
+                                ヒアルロン酸不足の肌
+                            </p>
+                            <p class="mt-2 text-xs text-gray-500">
+                                ※乾燥によるキメの乱れた肌状態のこと　※画像はイメージ
+                            </p>
+                        </div>
+
+                        <!-- Step 4: ではどうすれば？+ icon + ▼ -->
+                        <div>
+                            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                                <p class="text-lg md:text-xl text-gray-700 leading-relaxed inline-flex items-center justify-center gap-2">
+                                    では、どうすればいいの？
+                                </p>
+                            </div>
+                            <div class="flex justify-center py-2" aria-hidden="true" data-aos="fade-up" data-aos-delay="250">
+                                <span class="text-gray-600 text-4xl leading-none inline-block animate-float">▼</span>
+                            </div>
+                        </div>
+
+                        <!-- Video: ヒアルロン酸の滴（約8秒） -->
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="275">
+                            <video id="acid-drop-video" class="w-full max-w-2xl mx-auto rounded-lg shadow-lg" src="videos/acid_drop.mp4" autoplay muted loop playsinline preload="auto" muted controls controlslist="nodownload" aria-label="ヒアルロン酸の滴のイメージ動画">
+                                お使いのブラウザは動画の再生に対応していません。
+                            </video>
+                        </div>
+
+                        <!-- Step 5: 製品 copy + flow_capsules + grid 2 製品画像 -->
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                            <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                                そんな良質なヒアルロン酸。
+                                <span class="inline-block px-2 py-0.5 bg-amber-100 text-gray-900 font-semibold animate-shake">
+                                    『なるべくお肌に直接届けたい』
+                                </span>
+                                と試行錯誤した結果…
+                            </p>
+                            <p class="mt-4 text-lg md:text-xl text-gray-900 leading-relaxed">
+                                美容液でも化粧水でもなく…！
+                            </p>
+                            <p class="mt-2 text-lg md:text-xl leading-relaxed">
+                                <span class="text-rose-700 font-bold">【飲む】</span>
+                                という形にたどり着き、カプセルに限界量まで閉じ込めたんです！
+                            </p>
+                            <div class="mt-6">
+                                <img src="images/flow_capsules.jpg" alt="カプセルのイメージ" class="w-full max-w-3xl mx-auto rounded-lg shadow-lg" loading="lazy" decoding="async">
+                            </div>
+                            <p class="mt-8 text-xl md:text-2xl font-bold text-gray-900 text-center leading-relaxed mb-6">
+                                SHIMISEI。飲む美容。
+                            </p>
+                            <!-- Gallery carousel (CSS scroll-snap, không dùng thư viện) -->
+                            <div class="gallery-carousel mt-6" data-aos="fade-up">
+                                <h2 class="gallery-carousel__heading text-lg md:text-xl text-gray-700 text-center mb-6 font-medium">
+                                    「厳格な品質管理で作られた、本格日本製サプリメント」
+                                </h2>
+                                <div class="gallery-carousel__scroll w-full max-w-full overflow-x-auto overflow-y-hidden flex gap-4 snap-x snap-mandatory rounded-2xl bg-gray-100 py-3 px-2 min-h-[320px] md:min-h-[420px]" style="height: 420px; scrollbar-width: none; -ms-overflow-style: none;">
+                                    <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
+                                        <img src="images/gallery_1.webp" alt="SHIMISEI 製品イメージ1" class="w-full h-full object-cover rounded-xl" loading="lazy">
+                                    </div>
+                                    <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
+                                        <img src="images/gallery_2.webp" alt="SHIMISEI 製品イメージ2" class="w-full h-full object-cover rounded-xl" loading="lazy">
+                                    </div>
+                                    <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
+                                        <img src="images/gallery_3.webp" alt="SHIMISEI 製品イメージ3" class="w-full h-full object-cover rounded-xl" loading="lazy">
+                                    </div>
+                                    <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
+                                        <img src="images/shimisei_product.jpg" alt="SHIMISEI 製品" class="w-full h-full object-cover rounded-xl" loading="lazy">
+                                    </div>
+                                    <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
+                                        <img src="images/shimisei_product_2.jpg" alt="SHIMISEI 製品" class="w-full h-full object-cover rounded-xl" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -596,7 +732,6 @@
 
     <!-- AOS JS (Defer) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    
     <!-- Custom JS (Defer) -->
     <script src="script.js" defer></script>
 </body>
