@@ -1,10 +1,11 @@
 // Initialize AOS (Animate On Scroll)
 document.addEventListener('DOMContentLoaded', function() {
-    var v = document.querySelector('video');
-    if (v) {
+    // Autoplay cho tất cả video (muted) — Safari / mobile
+    document.querySelectorAll('video').forEach(function(v) {
         v.muted = true;
+        v.setAttribute('muted', '');
         v.play().catch(function() {});
-    }
+    });
 
     AOS.init({
         duration: 800,
@@ -51,30 +52,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    var acidVideo = document.getElementById('acid-drop-video');
-    if (acidVideo) {
-        acidVideo.muted = true;
-        acidVideo.setAttribute('muted', '');
-        function tryPlayAcidVideo() {
-            acidVideo.muted = true;
-            acidVideo.play().catch(function() {});
+    // Autoplay khi vào viewport (acid_drop + acid_osmosis)
+    function setupVideoAutoplay(video) {
+        if (!video) return;
+        video.muted = true;
+        video.setAttribute('muted', '');
+        function tryPlay() {
+            video.muted = true;
+            video.play().catch(function() {});
         }
-        acidVideo.addEventListener('canplay', tryPlayAcidVideo);
-        acidVideo.addEventListener('loadeddata', tryPlayAcidVideo);
+        video.addEventListener('canplay', tryPlay);
+        video.addEventListener('loadeddata', tryPlay);
         if (typeof IntersectionObserver !== 'undefined') {
             var io = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
-                        acidVideo.muted = true;
-                        acidVideo.play().catch(function() {});
+                        video.muted = true;
+                        video.play().catch(function() {});
                     }
                 });
             }, { rootMargin: '20px', threshold: 0.25 });
-            io.observe(acidVideo);
+            io.observe(video);
         } else {
-            tryPlayAcidVideo();
+            tryPlay();
         }
     }
+    setupVideoAutoplay(document.getElementById('acid-drop-video'));
+    setupVideoAutoplay(document.getElementById('acid-osmosis-video'));
 });
 
 // Back to Top Button
