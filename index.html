@@ -60,12 +60,23 @@
         75% { transform: translateX(2px); }
       }
       .animate-shake { animation: shake 0.4s ease-in-out infinite; }
+      @keyframes shake-tilt {
+        0%, 100% { transform: translate(-50%, 50%) translateX(0) rotate(0deg); }
+        25% { transform: translate(-50%, 50%) translateX(-3px) rotate(-2deg); }
+        75% { transform: translate(-50%, 50%) translateX(3px) rotate(2deg); }
+      }
+      .animate-shake-tilt { animation: shake-tilt 0.5s ease-in-out infinite; }
       .gallery-carousel__scroll::-webkit-scrollbar { display: none; }
       .gallery-carousel__scroll { cursor: grab; }
       .gallery-carousel__scroll.grabbing { cursor: grabbing; }
       .gallery-carousel__scroll.grabbing * { pointer-events: none; }
       .product-lineup__scroll::-webkit-scrollbar { display: none; }
       .product-lineup__scroll { scrollbar-width: none; }
+      .reason01-gloss { text-shadow: 0 1px 2px rgba(255,255,255,0.8), 0 2px 4px rgba(0,0,0,0.1); }
+      .full-width-bg { width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
+      @media (min-width: 768px) {
+        .vertical-text-md { writing-mode: vertical-rl; text-orientation: mixed; }
+      }
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -339,7 +350,6 @@
                         選べる3タイプ
                     </h2>
                     
-                    <!-- Mobile: slide ngang | PC: grid 3 cột -->
                     <div class="product-lineup__scroll flex flex-nowrap gap-3 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 mb-8 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:snap-none md:flex-wrap">
                         <!-- Large Box -->
                         <div class="flex-shrink-0 w-[70vw] max-w-[260px] snap-center md:w-auto md:max-w-none bg-white border-2 border-[#F5E6E0] rounded-lg p-4 text-center hover:shadow-lg transition-all duration-300 md:hover:scale-105 flex flex-col" data-aos="zoom-in" data-aos-delay="300">
@@ -377,13 +387,13 @@
         </section>
 
         <!-- Section: Skin comparison 50代 vs 20代 -->
-        <section id="skin-comparison" class="py-8 md:py-12 bg-white">
+        <section id="skin-comparison" class="py-2 md:py-8 bg-white">
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto">
                     <div class="space-y-14 md:space-y-20">
                         <!-- Step 1: 50 vs 20 比較（大・揺れ）→ osmosis → 届きにくく → 2通りスキンケア画像 -->
                         <div class="text-center" data-aos="fade-up">
-                            <p class="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed inline-block animate-shake mb-6">
+                            <p class="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed inline-block animate-shake">
                                 ご存知ですか？肌の表面は厚くなっていくのです。
                             </p>
                             <div class="mt-6">
@@ -503,40 +513,116 @@
                             <div class="mt-6">
                                 <img src="images/flow_capsules.jpg?v=1.1" alt="カプセルのイメージ" class="w-full max-w-3xl mx-auto rounded-lg shadow-lg" loading="lazy" decoding="async">
                             </div>
-                            <p class="mt-8 text-xl md:text-2xl font-bold text-gray-900 text-center leading-relaxed mb-6">
-                                SHIMISEI。飲む美容。
-                            </p>
-                            <!-- Gallery carousel (CSS scroll-snap, không dùng thư viện) -->
-                            <div class="gallery-carousel mt-6" data-aos="fade-up">
-                                <h2 class="gallery-carousel__heading text-lg md:text-xl text-gray-700 text-center mb-6 font-medium">
-                                    「厳格な品質管理で作られた、本格日本製サプリメント」
-                                </h2>
-                                <div class="gallery-carousel__scroll w-full max-w-full overflow-x-auto overflow-y-hidden flex gap-4 snap-x snap-mandatory rounded-2xl bg-gray-100 py-3 px-2 min-h-[320px] md:min-h-[420px]" style="height: 420px; scrollbar-width: none; -ms-overflow-style: none;">
-                                    <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
-                                        <img src="images/gallery_1.webp" alt="SHIMISEI 製品イメージ1" class="w-full h-full object-cover rounded-xl" loading="lazy">
+                        </div>
+
+                        <div class="bg-[#F5E6E0] py-4 md:py-8 full-width-bg" data-aos="fade-up">
+                            <div class="max-w-4xl mx-auto px-4 md:px-0">
+                            <div class="relative bg-[#E8D5CE] rounded-t-2xl pt-2 pb-8 px-4 text-center">
+                                    <p class="inline-block bg-white/95 text-gray-800 text-sm md:text-base font-medium px-4 py-1.5 rounded-full mb-4">うるおいがすごい</p>
+                                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight">
+                                        <span class="text-amber-700 drop-shadow-[0_1px_2px_rgba(255,255,255,0.5)]">2</span><span>つの理由</span>
+                                    </h2>
+                                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-amber-800/90 text-white rounded-full px-6 py-3 text-center shadow-lg animate-shake-tilt">
+                                        <span class="block text-xs md:text-sm">理由</span>
+                                        <span class="block text-xl md:text-2xl font-bold">01</span>
                                     </div>
-                                    <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
-                                        <img src="images/gallery_2.webp" alt="SHIMISEI 製品イメージ2" class="w-full h-full object-cover rounded-xl" loading="lazy">
+                            </div>
+
+                            <div class="bg-gradient-to-r from-cyan-50 to-sky-50 rounded-b-2xl md:rounded-b-3xl -mt-2 pt-8 pb-10 px-4 md:px-8 border border-t-0 border-cyan-200/60">
+                                    <p class="text-center">
+                                        <span class="inline-block bg-white/80 text-gray-800 text-sm md:text-base px-4 py-2 rounded-full mb-4">内側からの効果で顔だけではなく</span>
+                                    </p>
+                                    <p class="text-xl md:text-2xl font-bold text-gray-900 text-center mb-1">カラダ全体の</p>
+                                    <p class="text-2xl md:text-4xl font-bold text-center mb-8 reason01-gloss" style="color: #C73E54;">潤いをキープ</p>
+
+                                    <!-- Diagram: 飲むHA 叶う + うるおいンチャージ -->
+                                    <div class="mt-8 md:mt-12 w-full">
+                                        <p class="text-center text-gray-900 font-medium mb-1">飲むヒアルロン酸だから叶う</p>
+                                        <p class="text-center text-xl md:text-2xl font-bold mb-6 md:mb-8" style="color: #C73E54;">内側からのうるおいンチャージ!</p>
+                                        <div class="w-full">
+                                            <img src="images/reason01_human.png" alt="飲むヒアルロン酸の体内めぐり" class="w-full max-w-3xl mx-auto rounded-2xl block" loading="lazy" decoding="async">
+                                        </div>
+                                        <div class="flex flex-nowrap items-center justify-center gap-2 sm:gap-4 md:gap-6 mt-6 overflow-x-auto min-w-0">
+                                            <div class="flex-shrink-0 bg-amber-200/80 rounded-2xl px-3 py-2 sm:px-4 sm:py-3 text-center">
+                                                <span class="text-gray-900 font-semibold text-sm sm:text-base">飲む</span>
+                                            </div>
+                                            <div class="flex-shrink-0 text-center min-w-0">
+                                                <p class="text-xs sm:text-sm md:text-base text-gray-800 whitespace-nowrap">低分子化され <span class="underline decoration-yellow-400 decoration-2">腸で吸収</span></p>
+                                            </div>
+                                            <div class="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center bg-cyan-100/70 border-2 border-cyan-200/60 shadow-inner" aria-label="そして 肌にめぐる">
+                                                <p class="text-[10px] sm:text-xs md:text-sm font-bold text-center leading-tight px-1" style="color: #C73E54;">そして 肌に<br>めぐる</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
-                                        <img src="images/gallery_3.webp" alt="SHIMISEI 製品イメージ3" class="w-full h-full object-cover rounded-xl" loading="lazy">
+                            </div>
+
+                            <div class="mt-8 md:mt-8 relative">
+                                    <div class="relative bg-orange-200 rounded-t-2xl pt-4 pb-12 px-4 text-center min-h-[60px]">
+                                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-amber-800/90 text-white rounded-full px-6 py-3 text-center shadow-lg animate-shake-tilt">
+                                            <span class="block text-xs md:text-sm">理由</span>
+                                            <span class="block text-xl md:text-2xl font-bold">02</span>
+                                        </div>
                                     </div>
-                                    <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
-                                        <img src="images/gallery_4.jpg" alt="SHIMISEI 製品イメージ4" class="w-full h-full object-cover rounded-xl" loading="lazy">
+                                    <div class="bg-gradient-to-b from-orange-100 to-rose-100/95 rounded-b-2xl md:rounded-b-3xl -mt-2 pt-14 pb-10 px-4 md:px-8 border border-t-0 border-orange-200/60">
+                                        <p class="text-center mb-4">
+                                            <span class="inline-block bg-white/90 text-gray-800 text-sm md:text-base px-4 py-2 rounded-full">肌の奥に届くだけでなく</span>
+                                        </p>
+                                        <h3 class="text-xl md:text-3xl font-bold text-gray-900 text-center mb-6">肌の<span class="text-rose-700">うるおいを</span> <span class="text-rose-700">保持するメカニズム</span></h3>
+                                        <img src="images/reason02.jpg" alt="肌のうるおいを保持するメカニズム" class="w-full rounded-2xl mb-6 object-cover" loading="lazy" decoding="async">
+                                        <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                                            <div class="flex-1 max-w-2xl mx-auto md:mx-0 space-y-6 w-full">
+                                                <div class="bg-orange-200/90 rounded-2xl px-6 py-4 flex items-center justify-center gap-3 border border-orange-300/50">
+                                                    <!-- <img src="images/waters/1.png" alt="" class="w-8 h-8 object-contain opacity-90" loading="lazy" decoding="async" aria-hidden="true"> -->
+                                                    <span class="text-gray-800 text-lg md:text-xl font-bold text-center">潤いの生産工場を 活発に!</span>
+                                                </div>
+                                                <div class="bg-white rounded-xl p-5 md:p-6 text-gray-900 text-sm md:text-base leading-relaxed">
+                                                    <p class="mb-2">体の潤いを生み出す役割をもつ「<ruby>線維芽細胞<rt>せんいがさいぼう</rt></ruby>」はまさに「潤いの工場」。内側からヒアルロン酸を直接「潤いの工場」に届けることで「ヒアルロン酸生産が促進され肌の潤いを保持」してくれるんです。</p>
+                                                    <p class="mt-2"><span class="bg-amber-100/80 px-1 rounded">体の潤いを生み出す役割をもつ</span> … <span class="bg-cyan-100/80 px-1 rounded">促進され肌の潤いを保持</span></p>
+                                                </div>
+                                            </div>
+                                            <p class="text-gray-900 font-medium text-lg md:text-xl flex-shrink-0 w-full md:w-auto text-center md:text-left vertical-text-md order-last md:order-none">ヒアルロン酸の <span class="text-rose-700 font-bold">合成を</span></p>
+                                        </div>
                                     </div>
-                                    <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
-                                        <img src="images/gallery_5.jpg" alt="SHIMISEI 製品イメージ5" class="w-full h-full object-cover rounded-xl" loading="lazy">
-                                    </div>
-                                    <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
-                                        <img src="images/gallery_6.jpg" alt="SHIMISEI 製品イメージ6" class="w-full h-full object-cover rounded-xl" loading="lazy">
-                                    </div>
-                                    <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
-                                        <img src="images/gallery_7.jpg" alt="SHIMISEI 製品イメージ7" class="w-full h-full object-cover rounded-xl" loading="lazy">
-                                    </div>
-                                    <!-- <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
-                                        <img src="images/shimisei_product_2.jpg" alt="SHIMISEI 製品" class="w-full h-full object-cover rounded-xl" loading="lazy">
-                                    </div> -->
-                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Product Gallery (SHIMISEI。飲む美容。+ carousel) -->
+        <section id="product-gallery" class="py-4 md:py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-5xl mx-auto">
+                    <p class="text-xl md:text-2xl font-bold text-gray-900 text-center leading-relaxed mb-2 pb-2 inline-block w-full max-w-md mx-auto" data-aos="fade-up">
+                        SHIMISEI。飲む美容。
+                    </p>
+                    <h2 class="gallery-carousel__heading text-lg md:text-xl text-gray-700 text-center mb-6 font-medium mt-4">
+                        「厳格な品質管理で作られた、本格日本製サプリメント」
+                    </h2>
+                    <div class="gallery-carousel mt-6" data-aos="fade-up">
+                        <div class="gallery-carousel__scroll w-full max-w-full overflow-x-auto overflow-y-hidden flex gap-4 snap-x snap-mandatory rounded-2xl bg-gray-100 py-3 px-2 min-h-[320px] md:min-h-[420px]" style="height: 420px; scrollbar-width: none; -ms-overflow-style: none;">
+                            <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
+                                <img src="images/gallery_1.webp" alt="SHIMISEI 製品イメージ1" class="w-full h-full object-cover rounded-xl" loading="lazy" decoding="async">
+                            </div>
+                            <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
+                                <img src="images/gallery_2.webp" alt="SHIMISEI 製品イメージ2" class="w-full h-full object-cover rounded-xl" loading="lazy" decoding="async">
+                            </div>
+                            <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
+                                <img src="images/gallery_3.webp" alt="SHIMISEI 製品イメージ3" class="w-full h-full object-cover rounded-xl" loading="lazy" decoding="async">
+                            </div>
+                            <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
+                                <img src="images/gallery_4.jpg" alt="SHIMISEI 製品イメージ4" class="w-full h-full object-cover rounded-xl" loading="lazy" decoding="async">
+                            </div>
+                            <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
+                                <img src="images/gallery_5.jpg" alt="SHIMISEI 製品イメージ5" class="w-full h-full object-cover rounded-xl" loading="lazy" decoding="async">
+                            </div>
+                            <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
+                                <img src="images/gallery_6.jpg" alt="SHIMISEI 製品イメージ6" class="w-full h-full object-cover rounded-xl" loading="lazy" decoding="async">
+                            </div>
+                            <div class="gallery-carousel__slide flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-center h-full">
+                                <img src="images/gallery_7.jpg" alt="SHIMISEI 製品イメージ7" class="w-full h-full object-cover rounded-xl" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
