@@ -44,7 +44,7 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     
     <!-- Preload Critical Resources -->
-    <link rel="preload" as="image" href="images/hero_model.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="images/hero.webp" fetchpriority="high">
     <link rel="preload" as="font" href="fonts/noto-sans-jp-v56-japanese-regular.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="fonts/noto-sans-jp-v56-japanese-700.woff2" type="font/woff2" crossorigin>
     <link rel="dns-prefetch" href="https://unpkg.com">
@@ -730,6 +730,68 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Manufacturing video (YouTube click-to-load) -->
+        <section id="manufacturing-video" class="py-10 md:py-16 bg-[#F5E6E0] border-t border-[#E8D5CE]/60">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div class="space-y-4 md:space-y-6" data-aos="fade-up">
+                        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+                            製造工程（動画）
+                        </h2>
+                        <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+                            SHIMISEIの製造工程を短い動画でご紹介します。下のサムネイルをクリックすると再生されます。
+                        </p>
+                    </div>
+
+                    <div data-aos="zoom-in" data-aos-delay="100">
+                        <div class="relative w-full overflow-hidden rounded-xl shadow-lg bg-gray-100" style="padding-top: 56.25%;" data-youtube-container
+                            data-youtube-id="mNBPv8xYbPo"
+                            data-youtube-title="SHIMISEI - 製造工程">
+                            <!-- Placeholder (thumbnail + play) -->
+                            <div class="absolute inset-0" data-youtube-placeholder>
+                                <img
+                                    class="absolute inset-0 w-full h-full object-cover"
+                                    src="https://img.youtube.com/vi/xTE6kR-foB4/hqdefault.jpg"
+                                    alt="SHIMISEI - 製造工程 サムネイル"
+                                    loading="lazy"
+                                    decoding="async">
+                                <div class="absolute inset-0 bg-black/20"></div>
+
+                                <button
+                                    type="button"
+                                    class="absolute inset-0 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-50/60"
+                                    aria-label="動画を再生する"
+                                    data-youtube-play>
+                                    <span class="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/90 text-gray-900 shadow-lg hover:bg-white transition-colors">
+                                        <svg class="w-7 h-7 md:w-8 md:h-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                            <path d="M8.594 6.956a1.5 1.5 0 0 0-2.326 1.265v7.56a1.5 1.5 0 0 0 2.326 1.265l8.354-3.78a1.5 1.5 0 0 0 0-2.71l-8.354-3.78z"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <!-- Where the iframe will be injected -->
+                            <div class="absolute inset-0 w-full h-full pointer-events-none" data-youtube-target></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video structured data (context for Google) -->
+                <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "VideoObject",
+                    "name": "SHIMISEI - 製造工程",
+                    "description": "SHIMISEIの製造工程を短い動画でご紹介します。",
+                    "thumbnailUrl": [
+                        "https://img.youtube.com/vi/xTE6kR-foB4/hqdefault.jpg"
+                    ],
+                    "embedUrl": "https://www.youtube-nocookie.com/embed/xTE6kR-foB4"
+                }
+                </script>
             </div>
         </section>
 

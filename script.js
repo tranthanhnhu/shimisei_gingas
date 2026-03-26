@@ -15,6 +15,47 @@ document.addEventListener('DOMContentLoaded', function() {
         delay: 0
     });
 
+    // YouTube click-to-load (thumbnail + iframe injected on demand)
+    function setupYouTubeClickToLoad() {
+        var containers = document.querySelectorAll('[data-youtube-container]');
+        if (!containers || containers.length === 0) return;
+
+        containers.forEach(function(container) {
+            var playBtn = container.querySelector('[data-youtube-play]');
+            var target = container.querySelector('[data-youtube-target]');
+            if (!playBtn || !target) return;
+
+            playBtn.addEventListener('click', function() {
+                // Prevent duplicate iframe injection.
+                if (target.querySelector('iframe')) return;
+
+                var videoId = container.getAttribute('data-youtube-id');
+                var videoTitle = container.getAttribute('data-youtube-title') || 'YouTube video';
+                if (!videoId) return;
+
+                var iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId);
+                iframe.title = videoTitle;
+                iframe.loading = 'lazy';
+                iframe.frameBorder = '0';
+                iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                iframe.allowFullscreen = true;
+                iframe.allow = 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                iframe.className = 'w-full h-full block border-0';
+
+                target.appendChild(iframe);
+                // Enable interactions now that iframe exists.
+                target.classList.remove('pointer-events-none');
+
+                // Hide thumbnail placeholder after iframe is created.
+                var placeholder = container.querySelector('[data-youtube-placeholder]');
+                if (placeholder) placeholder.classList.add('hidden');
+            });
+        });
+    }
+
+    setupYouTubeClickToLoad();
+
     var galleryScroll = document.querySelector('.gallery-carousel__scroll');
     if (galleryScroll) {
         document.addEventListener('wheel', function(e) {
