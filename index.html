@@ -94,6 +94,8 @@
       @media (min-width: 768px) {
         .vertical-text-md { writing-mode: vertical-rl; text-orientation: mixed; }
       }
+      /* Performance: avoid loading heavy 500 font in critical path */
+      .font-medium { font-weight: 400; }
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -112,8 +114,8 @@
         <div class="relative">
             <!-- Mini Bubbles Overlay (covers both Section 1 & 2) -->
             <div class="absolute inset-0 z-30 pointer-events-none">
-                <img src="images/mini_bubbles_1.png" alt="" class="absolute top-[43%] left-6 md:left-12 w-full opacity-70" loading="lazy" decoding="async">
-                <img src="images/mini_bubbles_2.png" alt="" class="absolute top-[105%] md:top-[80%] right-6 md:right-16 w-1/2 opacity-30" loading="lazy" decoding="async">
+                <img src="images/mini_bubbles_1.png?v=1.1" alt="" class="absolute top-[43%] left-6 md:left-12 w-full opacity-70" loading="lazy" decoding="async">
+                <img src="images/mini_bubbles_2.png?v=1.1" alt="" class="absolute top-[105%] md:top-[80%] right-6 md:right-16 w-1/2 opacity-30" loading="lazy" decoding="async">
                 <!-- push one bubble down to overlap Section 2 area -->
                 <!-- <img src="images/mini_bubbles_3.png" alt="" class="absolute top-[108vh] md:top-[280vh] left-6 w-1/2 opacity-20" loading="lazy" decoding="async"> -->
             </div>
@@ -355,7 +357,7 @@
                                 ご存知ですか？肌の表面は厚くなっていくのです。
                             </p>
                             <div class="mt-6">
-                                <img src="images/osmosis.jpg?v=1.1" alt="50代と20代の肌状態。角層の厚さと水分浸透の違い" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg" loading="lazy" decoding="async">
+                                <img src="images/osmosis.jpg?v=1.2" alt="50代と20代の肌状態。角層の厚さと水分浸透の違い" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg" loading="lazy" decoding="async">
                             </div>
                             <p class="mt-6 text-lg md:text-xl text-gray-700 leading-relaxed">
                                 このため、今のスキンケアでも届きにくくなっていくのです。
