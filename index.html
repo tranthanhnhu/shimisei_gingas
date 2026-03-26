@@ -27,12 +27,14 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://shimisei.jp/">
     
-    <!-- Local Fonts - Noto Sans JP -->
-    
     <!-- AOS CSS (Defer) -->
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></noscript>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS (Built) -->
     <link rel="stylesheet" href="styles.css?v=20260318.2">
     
@@ -45,8 +47,6 @@
     
     <!-- Preload Critical Resources -->
     <link rel="preload" as="image" href="images/hero.webp" fetchpriority="high">
-    <link rel="preload" as="font" href="fonts/noto-sans-jp-v56-japanese-regular.woff2" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="fonts/noto-sans-jp-v56-japanese-700.woff2" type="font/woff2" crossorigin>
     <link rel="dns-prefetch" href="https://unpkg.com">
     <style>
       @keyframes float {
@@ -94,7 +94,6 @@
       @media (min-width: 768px) {
         .vertical-text-md { writing-mode: vertical-rl; text-orientation: mixed; }
       }
-      /* Performance: avoid loading heavy 500 font in critical path */
       .font-medium { font-weight: 400; }
     </style>
 </head>
@@ -775,13 +774,11 @@
                                 </button>
                             </div>
 
-                            <!-- Where the iframe will be injected -->
                             <div class="absolute inset-0 w-full h-full pointer-events-none" data-youtube-target></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Video structured data (context for Google) -->
                 <script type="application/ld+json">
                 {
                     "@context": "https://schema.org",
