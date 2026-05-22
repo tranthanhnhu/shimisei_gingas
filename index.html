@@ -36,7 +36,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS (Built) -->
-    <link rel="stylesheet" href="styles.css?v=20260322.5">
+    <link rel="stylesheet" href="styles.css?v=20260522.3">
     <link rel="stylesheet" href="css/shop-modal.css?v=20260322.2">
     
     <!-- Favicon -->
@@ -181,18 +181,44 @@
                     </div>
                     
                     <!-- Product box and strength items -->
-                    <div class="flex flex-row items-center md:items-start gap-3 md:gap-8 justify-center">
+                    <div class="flex flex-row items-center gap-3 sm:gap-5 md:gap-8 justify-center strength-recommend-row">
                         <!-- Product box — left -->
-                        <div class="flex-shrink-0 w-[120px] sm:w-[170px] md:w-auto" data-aos="fade-left" data-aos-delay="100">
+                        <div class="flex-shrink-0 w-[36%] max-w-[8.5rem] sm:max-w-[10rem] md:w-auto md:max-w-[12rem] lg:max-w-[13rem]" data-aos="fade-left" data-aos-delay="100">
                             <!-- <img src="images/product_box_main.png" alt="SHIMISEI Product Box" class="w-full md:max-w-md mx-auto" loading="lazy" decoding="async"> -->
-                            <img src="images/hero_1.png" alt="SHIMISEI Product Box" class="w-full md:max-w-md mx-auto" loading="lazy" decoding="async">
+                            <img src="images/hero_1.png" alt="SHIMISEI Product Box" class="strength-recommend__product-img mx-auto" loading="lazy" decoding="async">
                         </div>
 
                         <!-- Strength items — right -->
-                        <div class="flex-1 min-w-0 space-y-2 sm:space-y-3 md:space-y-4" data-aos="fade-right" data-aos-delay="200">
-                            <img src="images/strength_1.png" alt="Strength 1" class="w-full" loading="lazy" decoding="async">
-                            <img src="images/strength_2.png" alt="Strength 2" class="w-full" loading="lazy" decoding="async">
-                            <img src="images/strength_3.png" alt="Strength 3" class="w-full" loading="lazy" decoding="async">
+                        <div class="flex-1 min-w-0 flex items-center feature-bullets-col" data-aos="fade-right" data-aos-delay="200">
+                            <ul class="feature-bullets">
+                                <li class="feature-bullets__item">
+                                    <span class="feature-bullets__icon" aria-hidden="true">
+                                        <svg class="feature-bullets__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="12" fill="#fff"/>
+                                            <path d="M7 12.5l3.5 3.5 6.5-7" fill="none" stroke="#C8A291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                    <span class="feature-bullets__text">厳選された原料を国内工場で製造。</span>
+                                </li>
+                                <li class="feature-bullets__item">
+                                    <span class="feature-bullets__icon" aria-hidden="true">
+                                        <svg class="feature-bullets__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="12" fill="#fff"/>
+                                            <path d="M7 12.5l3.5 3.5 6.5-7" fill="none" stroke="#C8A291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                    <span class="feature-bullets__text">GMP認定。安心・安全の日本製。</span>
+                                </li>
+                                <li class="feature-bullets__item">
+                                    <span class="feature-bullets__icon" aria-hidden="true">
+                                        <svg class="feature-bullets__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="12" fill="#fff"/>
+                                            <path d="M7 12.5l3.5 3.5 6.5-7" fill="none" stroke="#C8A291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                    <span class="feature-bullets__text">保存料・着色料 不使用。</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -205,18 +231,44 @@
                     </div>
                     
                     <!-- Recommend items and product box — 2 columns -->
-                    <div class="flex flex-row items-center md:items-start gap-3 sm:gap-4 md:gap-8 justify-center mb-8">
+                    <div class="flex flex-row items-center gap-3 sm:gap-5 md:gap-8 justify-center mb-8 strength-recommend-row">
                         <!-- Recommend items — left -->
-                        <div class="flex-1 min-w-0 space-y-2 sm:space-y-3 md:space-y-4" data-aos="fade-right" data-aos-delay="100">
-                            <img src="images/recommend_1.png" alt="Recommend 1" class="w-full" loading="lazy" decoding="async">
-                            <img src="images/recommend_2.png" alt="Recommend 2" class="w-full" loading="lazy" decoding="async">
-                            <img src="images/recommend_3.png" alt="Recommend 3" class="w-full" loading="lazy" decoding="async">
+                        <div class="flex-1 min-w-0 flex items-center feature-bullets-col" data-aos="fade-right" data-aos-delay="100">
+                            <ul class="feature-bullets">
+                                <li class="feature-bullets__item">
+                                    <span class="feature-bullets__icon" aria-hidden="true">
+                                        <svg class="feature-bullets__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="12" fill="#fff"/>
+                                            <path d="M7 12.5l3.5 3.5 6.5-7" fill="none" stroke="#C8A291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                    <span class="feature-bullets__text">肌の乾燥が気になる方</span>
+                                </li>
+                                <li class="feature-bullets__item">
+                                    <span class="feature-bullets__icon" aria-hidden="true">
+                                        <svg class="feature-bullets__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="12" fill="#fff"/>
+                                            <path d="M7 12.5l3.5 3.5 6.5-7" fill="none" stroke="#C8A291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                    <span class="feature-bullets__text">ハリやうるおいをキープしたい方</span>
+                                </li>
+                                <li class="feature-bullets__item">
+                                    <span class="feature-bullets__icon" aria-hidden="true">
+                                        <svg class="feature-bullets__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="12" fill="#fff"/>
+                                            <path d="M7 12.5l3.5 3.5 6.5-7" fill="none" stroke="#C8A291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                    <span class="feature-bullets__text">年齢による美容サポートを求める方</span>
+                                </li>
+                            </ul>
                         </div>
                         
                         <!-- Product box — right -->
-                        <div class="flex-shrink-0 w-[140px] sm:w-[200px] md:w-auto" data-aos="fade-left" data-aos-delay="200">
+                        <div class="flex-shrink-0 w-[36%] max-w-[8.5rem] sm:max-w-[10rem] md:w-auto md:max-w-[12rem] lg:max-w-[13rem]" data-aos="fade-left" data-aos-delay="200">
                             <!-- <img src="images/product_box.png" alt="SHIMISEI Product Box" class="w-full md:max-w-md mx-auto" loading="lazy" decoding="async"> -->
-                            <img src="images/hero_2.png" alt="SHIMISEI Product Box" class="w-full md:max-w-md mx-auto" loading="lazy" decoding="async">
+                            <img src="images/hero_2.png" alt="SHIMISEI Product Box" class="strength-recommend__product-img mx-auto" loading="lazy" decoding="async">
                         </div>
                     </div>
                     
