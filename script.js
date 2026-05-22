@@ -1,6 +1,6 @@
 // Initialize AOS (Animate On Scroll)
 document.addEventListener('DOMContentLoaded', function() {
-    // Autoplay cho tất cả video (muted) — Safari / mobile
+    // Autoplay all videos (muted) — Safari / mobile
     document.querySelectorAll('video').forEach(function(v) {
         v.muted = true;
         v.setAttribute('muted', '');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         delay: 0
     });
 
-    // YouTube click-to-load (thumbnail + iframe injected on demand)
+    // YouTube click-to-load (thumbnail + iframe on demand)
     function setupYouTubeClickToLoad() {
         var containers = document.querySelectorAll('[data-youtube-container]');
         if (!containers || containers.length === 0) return;
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!playBtn || !target) return;
 
             playBtn.addEventListener('click', function() {
-                // Prevent duplicate iframe injection.
+                // Prevent duplicate iframe injection
                 if (target.querySelector('iframe')) return;
 
                 var videoId = container.getAttribute('data-youtube-id');
@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 iframe.className = 'w-full h-full block border-0';
 
                 target.appendChild(iframe);
-                // Enable interactions now that iframe exists.
+                // Enable interaction after iframe exists
                 target.classList.remove('pointer-events-none');
 
-                // Hide thumbnail placeholder after iframe is created.
+                // Hide thumbnail placeholder after iframe is created
                 var placeholder = container.querySelector('[data-youtube-placeholder]');
                 if (placeholder) placeholder.classList.add('hidden');
             });
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Autoplay khi vào viewport (acid_drop + acid_osmosis)
+    // Autoplay when entering viewport (acid_drop + acid_osmosis)
     function setupVideoAutoplay(video) {
         if (!video) return;
         video.muted = true;
@@ -122,10 +122,10 @@ document.addEventListener('DOMContentLoaded', function() {
     setupVideoAutoplay(document.getElementById('acid-osmosis-video'));
 });
 
-// Back to Top Button
+// Back to top button
 const backToTopButton = document.getElementById('backToTop');
 
-// Show/hide back to top button based on scroll position
+// Show/hide back-to-top based on scroll position
 window.addEventListener('scroll', function() {
     if (window.pageYOffset > 300) {
         backToTopButton.classList.add('visible');
@@ -134,7 +134,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Smooth scroll to top when button is clicked
+// Smooth scroll to top on click
 backToTopButton.addEventListener('click', function() {
     window.scrollTo({
         top: 0,
@@ -142,7 +142,7 @@ backToTopButton.addEventListener('click', function() {
     });
 });
 
-// Smooth scroll for anchor links
+// Smooth scroll for in-page anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -160,7 +160,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Header scroll effect (optional enhancement)
+// Header scroll effect (optional)
 let lastScroll = 0;
 const header = document.querySelector('header');
 

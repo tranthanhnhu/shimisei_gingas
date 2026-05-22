@@ -9,7 +9,7 @@
     <meta name="author" content="SHIMISEI">
     <title>SHIMISEI - 飲む美容</title>
     
-    <!-- Open Graph / Facebook -->
+    <!-- Meta Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shimisei.jp/">
     <meta property="og:title" content="SHIMISEI - 飲む美容">
@@ -18,7 +18,7 @@
     <meta property="og:site_name" content="SHIMISEI">
     <meta property="og:locale" content="ja_JP">
     
-    <!-- Twitter -->
+    <!-- Meta Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://shimisei.jp/">
     <meta name="twitter:title" content="SHIMISEI - 飲む美容">
@@ -36,7 +36,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS (Built) -->
-    <link rel="stylesheet" href="styles.css?v=20260319.1">
+    <link rel="stylesheet" href="styles.css?v=20260322.5">
+    <link rel="stylesheet" href="css/shop-modal.css?v=20260322.2">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -109,54 +110,47 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Sections 1-2 wrapper to allow bubbles overlay across both like design -->
+        <!-- Sections 1-2 wrapper — bubble overlay -->
         <div class="relative">
-            <!-- Mini Bubbles Overlay (covers both Section 1 & 2) -->
+            <!-- Mini bubbles overlay (sections 1 & 2) -->
             <div class="absolute inset-0 z-30 pointer-events-none">
                 <img src="images/mini_bubbles1.png?v=1.1" alt="" class="absolute top-[43%] left-6 md:left-12 w-full opacity-70" loading="lazy" decoding="async">
                 <img src="images/mini_bubbles2.png?v=1.1" alt="" class="absolute top-[105%] md:top-[80%] right-6 md:right-16 w-1/2 opacity-30" loading="lazy" decoding="async">
-                <!-- push one bubble down to overlap Section 2 area -->
+                <!-- (disabled) extra bubble overlapping section 2 -->
                 <!-- <img src="images/mini_bubbles_3.png" alt="" class="absolute top-[108vh] md:top-[280vh] left-6 w-1/2 opacity-20" loading="lazy" decoding="async"> -->
             </div>
 
-            <!-- Section 1: Hero Section -->
+            <!-- Section 1: Hero -->
             <section id="hero" class="relative min-h-[50vh] md:min-h-screen flex items-center overflow-visible bg-gray-100">
-                <!-- Background Image -->
-                <div class="absolute inset-0 z-20 mt-[20px]">
-                    <img src="images/hero.webp" alt="Hero Model" class="w-full h-full object-cover object-[64%_center] md:object-cover md:object-center" loading="eager" fetchpriority="high" decoding="async">
-                    <!-- <img src="images/hero_modelBK.webp" alt="Hero Model" class="w-full h-full object-cover object-[64%_center] md:object-cover md:object-center" loading="eager" fetchpriority="high" decoding="async"> -->
+                <div class="absolute inset-0 z-0 mt-[20px]">
+                    <img src="images/hero.webp" alt="Hero Model" class="w-full h-full object-cover object-[72%_22%] sm:object-[68%_center] md:object-cover md:object-center" loading="eager" fetchpriority="high" decoding="async">
                 </div>
-                
-                <!-- Overlay -->
-                <div class="absolute inset-0 bg-gradient-to-r from-white/85 via-white/60 to-transparent z-10"></div>
-                
-                <!-- Content -->
-                <div class="relative z-20 container mx-auto px-4 pt-14 pb-20 md:pt-20 md:pb-40 mt-16">
-                    <div class="max-w-2xl">
-                        <!-- Logo -->
-                        <!-- <div class="mb-5 md:mb-8">
-                            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-3 md:mb-6">SHIMISEI</h1>
-                        </div> -->
-                        
-                        <!-- Slogan -->
-                        <div class="mb-6 md:mb-8">
-                            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-black leading-tight"> 内側からあふれる</h2>
+
+                <div class="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent md:from-white/85 md:via-white/60 z-10"></div>
+
+                <div class="relative z-20 container mx-auto px-4 pt-14 pb-16 md:pt-20 md:pb-40 mt-16 hero-content">
+                    <div class="max-w-2xl hero-content__inner">
+                        <div class="mb-5 md:mb-8">
+                            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-black leading-tight">内側からあふれる</h2>
                             <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-black leading-tight">[透明感]と[自信]</h2>
-                            <p class="text-lg sm:text-base md:text-xl lg:text-4xl text-black mt-2">Shimiseiは飲む美容。</p>
+                            <p class="text-base sm:text-base md:text-xl lg:text-4xl text-black mt-2">Shimiseiは飲む美容。</p>
+                        </div>
+                        <div class="shop-buy-slot mt-4 md:mt-6 flex justify-start">
+                            <button type="button" class="shop-trigger-btn" data-shop-trigger="shared">今すぐ購入</button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Section 2: Product Feature Section -->
+            <!-- Section 2: Product Feature -->
             <section id="product-feature" class="relative pt-0 pb-10 md:pb-16 bg-transparent">
-                <!-- Bubble should be smaller and overlap Section 1 & 3 like design -->
+                <!-- Main bubble — overlaps sections 1 & 3 -->
                 <div class="container mx-auto px-4">
-                    <div class="relative z-40 -mt-8 md:-mt-16 -mb-24 md:-mb-24 mx-auto w-full max-w-[300px] sm:max-w-[380px] md:max-w-[480px] pointer-events-none overflow-hidden" data-aos="fade-in">
+                    <div class="relative z-40 -mt-8 md:-mt-16 -mb-24 md:-mb-24 mx-auto w-full max-w-[280px] sm:max-w-[380px] md:max-w-[480px] pointer-events-none overflow-hidden" data-aos="fade-in">
                         <div class="relative pointer-events-auto">
                             <img src="images/bubbles.webp" alt="Bubble" class="w-full h-auto ml-3 md:ml-6 lg:ml-8" loading="lazy" decoding="async">
                             <div class="absolute inset-0 flex items-center justify-center pointer-events-none -mt-[20px]">
-                                <div class="text-center space-y-2 md:space-y-3 px-8 md:px-14 pointer-events-none">
+                                <div class="bubble-copy text-center space-y-2 md:space-y-3 px-10 sm:px-12 md:px-14 pointer-events-none">
                                     <p class="text-xs sm:text-sm md:text-base text-gray-800 leading-relaxed font-medium">
                                         高純度なヒアルロン酸で、<br>
                                         手軽に採れるうるおい習慣です
@@ -176,25 +170,25 @@
             </section>
         </div>
 
-        <!-- Section 3: Strength & Recommend Section -->
+        <!-- Section 3: Strength & Recommend -->
         <section id="strength-recommend" class="py-12 md:py-20 bg-[#F5E6E0]">
             <div class="container mx-auto px-4">
-                <!-- Strength Sub-section -->
+                <!-- Strength sub-section -->
                 <div class="mb-12 md:mb-16" data-aos="fade-up">
                     <!-- Title -->
                     <div class="mb-6 md:mb-8 text-center">
                         <img src="images/strength.png" alt="STRENGTH こだわり" class="mx-auto max-w-[250px] md:max-w-xs" loading="lazy" decoding="async">
                     </div>
                     
-                    <!-- Product Box and Strength Items -->
+                    <!-- Product box and strength items -->
                     <div class="flex flex-row items-center md:items-start gap-3 md:gap-8 justify-center">
-                        <!-- Product Box - Left -->
+                        <!-- Product box — left -->
                         <div class="flex-shrink-0 w-[120px] sm:w-[170px] md:w-auto" data-aos="fade-left" data-aos-delay="100">
                             <!-- <img src="images/product_box_main.png" alt="SHIMISEI Product Box" class="w-full md:max-w-md mx-auto" loading="lazy" decoding="async"> -->
                             <img src="images/hero_1.png" alt="SHIMISEI Product Box" class="w-full md:max-w-md mx-auto" loading="lazy" decoding="async">
                         </div>
 
-                        <!-- Strength Items - Right -->
+                        <!-- Strength items — right -->
                         <div class="flex-1 min-w-0 space-y-2 sm:space-y-3 md:space-y-4" data-aos="fade-right" data-aos-delay="200">
                             <img src="images/strength_1.png" alt="Strength 1" class="w-full" loading="lazy" decoding="async">
                             <img src="images/strength_2.png" alt="Strength 2" class="w-full" loading="lazy" decoding="async">
@@ -203,30 +197,30 @@
                     </div>
                 </div>
 
-                <!-- Recommend Sub-section -->
+                <!-- Recommend sub-section -->
                 <div data-aos="fade-up" data-aos-delay="300">
                     <!-- Title -->
                     <div class="mb-6 md:mb-8 text-center">
                         <img src="images/recommend.png" alt="RECOMMEND こんな方におすすめ" class="mx-auto max-w-[250px] md:max-w-xs" loading="lazy" decoding="async">
                     </div>
                     
-                    <!-- Recommend Items and Product Box - 2 columns -->
+                    <!-- Recommend items and product box — 2 columns -->
                     <div class="flex flex-row items-center md:items-start gap-3 sm:gap-4 md:gap-8 justify-center mb-8">
-                        <!-- Recommend Items - Left -->
+                        <!-- Recommend items — left -->
                         <div class="flex-1 min-w-0 space-y-2 sm:space-y-3 md:space-y-4" data-aos="fade-right" data-aos-delay="100">
                             <img src="images/recommend_1.png" alt="Recommend 1" class="w-full" loading="lazy" decoding="async">
                             <img src="images/recommend_2.png" alt="Recommend 2" class="w-full" loading="lazy" decoding="async">
                             <img src="images/recommend_3.png" alt="Recommend 3" class="w-full" loading="lazy" decoding="async">
                         </div>
                         
-                        <!-- Product Box - Right -->
+                        <!-- Product box — right -->
                         <div class="flex-shrink-0 w-[140px] sm:w-[200px] md:w-auto" data-aos="fade-left" data-aos-delay="200">
                             <!-- <img src="images/product_box.png" alt="SHIMISEI Product Box" class="w-full md:max-w-md mx-auto" loading="lazy" decoding="async"> -->
                             <img src="images/hero_2.png" alt="SHIMISEI Product Box" class="w-full md:max-w-md mx-auto" loading="lazy" decoding="async">
                         </div>
                     </div>
                     
-                    <!-- Descriptive Text -->
+                    <!-- Descriptive text -->
                     <div class="max-w-4xl mx-auto text-center px-4">
                         <p class="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">
                             内側から輝く、うるおいと透明感をあなたに。<br>
@@ -277,13 +271,16 @@
                                     朝食後または就寝前（肌の再生の黄金時間）に、水または温水と一緒に飲んでください。
                                 </p>
                             </div>
+                            <div class="shop-buy-slot shop-buy-slot--howto mt-4 flex justify-center md:justify-start w-full">
+                                <button type="button" class="shop-trigger-btn" data-shop-trigger="shared">今すぐ購入</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Kamakura inspiration + hero visual (above product lineup) -->
+        <!-- Kamakura inspiration (above product lineup) -->
         <section id="kamakura-inspiration" class="bg-white border-t border-[#E8D5CE]/40 pt-8 md:pt-12 pb-4 md:pb-6" aria-labelledby="kamakura-inspiration-heading">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto flex flex-col md:flex-row-reverse gap-4 md:gap-12 items-center">
@@ -292,8 +289,8 @@
                             <img src="images/product-box-kamakura-lotus.jpeg" alt="蓮の花と水面を背景にしたSHIMISEI製品ボックス。鎌倉の静けさをイメージしたビジュアル" class="w-full h-auto block object-contain" loading="lazy" decoding="async">
                         </div>
                     </div>
-                    <div class="w-full md:w-1/2" data-aos="fade-right">
-                        <p id="kamakura-inspiration-heading" class="text-sm md:text-xl lg:text-2xl text-gray-700 leading-relaxed">
+                    <div class="w-full md:w-1/2 flex flex-col items-center md:items-start" data-aos="fade-right">
+                        <p id="kamakura-inspiration-heading" class="text-sm md:text-xl lg:text-2xl text-gray-700 leading-relaxed text-center md:text-left">
                             古都・鎌倉の静けさと、水面に映る蓮の花。その清らかで凛とした美しさから着想した、SHIMISEIの世界観です。
                         </p>
                     </div>
@@ -310,34 +307,43 @@
                     </h2>
                     
                     <div class="product-lineup__scroll flex flex-nowrap gap-3 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 mb-8 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:snap-none md:flex-wrap">
-                        <!-- Large Box -->
+                        <!-- Large box (180 capsules) -->
                         <div class="flex-shrink-0 w-[70vw] max-w-[260px] snap-center md:w-auto md:max-w-none bg-white border-2 border-[#F5E6E0] rounded-lg p-4 text-center hover:shadow-lg transition-all duration-300 md:hover:scale-105 flex flex-col" data-aos="zoom-in" data-aos-delay="300">
                             <div class="w-full h-[165px] md:h-[240px] flex items-center justify-center mb-2 bg-gray-50/50 rounded overflow-hidden flex-shrink-0">
                                 <img src="images/packaging_large.jpg?v=1.2" alt="180粒入り お得な大容量タイプ" class="max-w-full max-h-full object-contain" loading="lazy" decoding="async">
                             </div>
-                            <div class="flex flex-col justify-end min-h-[80px]">
+                            <div class="flex flex-col justify-end flex-grow min-h-[80px]">
                                 <h3 class="text-sm md:text-xl font-bold text-gray-900 mb-1">180粒入り お得な大容量タイプ</h3>
                                 <p class="text-[11px] md:text-sm text-gray-700 leading-tight">1粒あたりのコストを最適化。リピーターの方、毎日うるおいのあるお肌を目指す方へ</p>
                             </div>
+                            <div class="shop-buy-slot mt-3 flex justify-center w-full">
+                                <button type="button" class="shop-trigger-btn" data-shop-product="p180">今すぐ購入</button>
+                            </div>
                         </div>
-                        <!-- Small Box -->
+                        <!-- Small box (60 capsules) -->
                         <div class="flex-shrink-0 w-[70vw] max-w-[260px] snap-center md:w-auto md:max-w-none bg-white border-2 border-[#F5E6E0] rounded-lg p-4 text-center hover:shadow-lg transition-all duration-300 md:hover:scale-105 flex flex-col" data-aos="zoom-in" data-aos-delay="200">
                             <div class="w-full h-[165px] md:h-[240px] flex items-center justify-center mb-2 bg-gray-50/50 rounded overflow-hidden flex-shrink-0">
                                 <img src="images/packaging_small.jpg?v=1.2" alt="60粒入り 初めての方におすすめ" class="max-w-full max-h-full object-contain" loading="lazy" decoding="async">
                             </div>
-                            <div class="flex flex-col justify-end min-h-[80px]">
+                            <div class="flex flex-col justify-end flex-grow min-h-[80px]">
                                 <h3 class="text-sm md:text-xl font-bold text-gray-900 mb-1">60粒入り 初めての方におすすめ</h3>
                                 <p class="text-[11px] md:text-sm text-gray-700 leading-tight">SHIMISEIを十分に実感いただける容量です。違いを感じたいあなたにピッタリのタイプ</p>
                             </div>
+                            <div class="shop-buy-slot mt-3 flex justify-center w-full">
+                                <button type="button" class="shop-trigger-btn" data-shop-product="p60">今すぐ購入</button>
+                            </div>
                         </div>
-                        <!-- Zip Pouch -->
+                        <!-- Zip pouch -->
                         <div class="flex-shrink-0 w-[70vw] max-w-[260px] snap-center md:w-auto md:max-w-none bg-white border-2 border-[#F5E6E0] rounded-lg p-4 text-center hover:shadow-lg transition-all duration-300 md:hover:scale-105 flex flex-col" data-aos="zoom-in" data-aos-delay="100">
                             <div class="w-full h-[165px] md:h-[240px] flex items-center justify-center mb-2 bg-gray-50/50 rounded overflow-hidden flex-shrink-0">
                                 <img src="images/packaging_zip.jpg?v=1.2" alt="便利なジッパータイプ" class="max-w-full max-h-full object-contain" loading="lazy" decoding="async">
                             </div>
-                            <div class="flex flex-col justify-end min-h-[80px]">
+                            <div class="flex flex-col justify-end flex-grow min-h-[80px]">
                                 <h3 class="text-sm md:text-xl font-bold text-gray-900 mb-1">便利なジッパータイプ</h3>
                                 <p class="text-[11px] md:text-sm text-gray-700 leading-tight">コンパクトで持ち運びが便利なタイプ。旅行やトライアルに最適</p>
+                            </div>
+                            <div class="shop-buy-slot mt-3 flex justify-center w-full">
+                                <button type="button" class="shop-trigger-btn" data-shop-product="pZip">今すぐ購入</button>
                             </div>
                         </div>
                     </div>
@@ -345,12 +351,12 @@
             </div>
         </section>
 
-        <!-- Section: Skin comparison 50代 vs 20代 -->
+        <!-- Section: Skin comparison 50s vs 20s -->
         <section id="skin-comparison" class="py-2 md:py-8 bg-white">
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto">
                     <div class="space-y-14 md:space-y-20">
-                        <!-- Step 1: 50 vs 20 比較（大・揺れ）→ osmosis → 届きにくく → 2通りスキンケア画像 -->
+                        <!-- Step 1: 50 vs 20 comparison → osmosis → hard to reach → 2 skincare types -->
                         <div class="text-center" data-aos="fade-up">
                             <p class="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed inline-block animate-shake">
                                 ご存知ですか？肌の表面は厚くなっていくのです。
@@ -366,7 +372,7 @@
                             </div>
                         </div>
 
-                        <!-- Step 2: 40代以降HA減少  -->
+                        <!-- Step 2: HA decline after 40s -->
                         <div class="text-center" data-aos="fade-up" data-aos-delay="100">
                             <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
                                 気になるのは、40代以降ヒアルロン酸量が減少すること。
@@ -381,7 +387,7 @@
                             </div>
                         </div>
 
-                        <!-- Step 3:  grid 2 dry skin -->
+                        <!-- Step 3: dry skin image grid -->
                         <div class="text-center" data-aos="fade-up" data-aos-delay="150">
                             <p class="text-lg md:text-xl text-gray-800 font-semibold leading-relaxed inline-block animate-shake">
                                 もちろん減ったヒアルロン酸は自然には増えません。外から補う必要があります。
@@ -408,7 +414,7 @@
                             </p>
                         </div>
 
-                        <!-- Step 4: ではどうすれば？+ icon + ▼ -->
+                        <!-- Step 4: what to do? + icon + arrow -->
                         <div>
                             <div class="text-center" data-aos="fade-up" data-aos-delay="200">
                                 <p class="text-lg md:text-xl text-gray-700 leading-relaxed inline-flex items-center justify-center gap-2">
@@ -420,40 +426,40 @@
                             </div>
                         </div>
 
-                        <!-- Video: ヒアルロン酸の滴（約8秒） -->
+                        <!-- Video: HA drop (~8s) -->
                         <div class="text-center" data-aos="fade-up" data-aos-delay="275">
                             <video id="acid-drop-video" class="w-full max-w-2xl mx-auto rounded-lg shadow-lg" src="videos/acid_drop_90.mp4" autoplay muted loop playsinline preload="auto" muted controls controlslist="nodownload" aria-label="ヒアルロン酸の滴のイメージ動画">
                                 お使いのブラウザは動画の再生に対応していません。
                             </video>
                         </div>
 
-                        <!-- HA解説: ヒアルロン酸とは + 動画・浸透 + 保水力・6L画像 -->
+                        <!-- HA explainer: what is HA + penetration video + 6L hydration -->
                         <div class="mt-8 md:mt-10 space-y-6 md:space-y-8" data-aos="fade-up" data-aos-delay="280">
-                            <!-- Text 1: HAとは -->
+                            <!-- Text 1: what is HA -->
                             <div class="bg-gradient-to-r from-amber-50/95 to-orange-50/90 border border-amber-200/60 rounded-xl p-2 md:p-6 max-w-3xl mx-auto text-center shadow-sm">
                                 <p class="text-sm md:text-base md:text-lg text-gray-700 leading-relaxed">
                                     ヒアルロン酸(HA)は、天然のグリコサミのグリカンであり、<br class="hidden sm:inline">糖の一種。肌のうるおいとハリ・なめらかさを支える、<span class="inline-block px-2 py-0.5 bg-amber-100 text-gray-900 font-semibold rounded animate-shake">まさに保湿の要</span><span class="whitespace-nowrap">となる成分です。</span>
                                 </p>
                             </div>
-                            <!-- Video: 浸透 -->
+                            <!-- Video: penetration -->
                             <div class="text-center">
                                 <video id="acid-osmosis-video" class="w-full max-w-2xl mx-auto rounded-lg shadow-lg" src="videos/acid_osmosis.mp4?v=1.1" autoplay muted loop playsinline preload="auto" controls controlslist="nodownload" aria-label="肌への浸透のイメージ動画">
                                     お使いのブラウザは動画の再生に対応していません。
                                 </video>
                             </div>
-                            <!-- Text 2: 保水力 6L -->
+                            <!-- Text 2: 6L hydration -->
                             <div class="bg-gradient-to-r from-cyan-50/95 to-sky-50/90 border border-cyan-100/80 rounded-xl p-4 md:p-6 max-w-3xl mx-auto text-center shadow-sm">
                                 <p class="text-sm md:text-base md:text-lg text-gray-800 leading-relaxed">
                                     驚異的な保水力で、<span class="inline-block px-2 py-1 bg-cyan-100 text-gray-900 font-semibold rounded animate-shake">1gで約6リットル</span><span class="whitespace-nowrap">もの水分を保ちます。</span>
                                 </p>
                             </div>
-                            <!-- Image: 6リットル（水分のイメージ） -->
+                            <!-- Image: 6L water retention visual -->
                             <div class="mt-6 text-center">
                                 <img src="images/water_6liters.jpg?v=1.1" alt="1gで約6リットルの水分を保つイメージ" class="w-full max-w-2xl mx-auto rounded-lg shadow-lg" loading="lazy" decoding="async">
                             </div>
                         </div>
 
-                        <!-- Step 5: 製品 copy + flow_capsules + grid 2 製品画像 -->
+                        <!-- Step 5: product copy + flow_capsules + 2 product images -->
                         <div class="text-center" data-aos="fade-up" data-aos-delay="300">
                             <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
                                 そんな良質なヒアルロン酸。
@@ -494,7 +500,7 @@
                                     <p class="text-xl md:text-2xl font-bold text-gray-900 text-center mb-1">カラダ全体の</p>
                                     <p class="text-2xl md:text-4xl font-bold text-center mb-8 reason01-gloss" style="color: #C73E54;">潤いをキープ</p>
 
-                                    <!-- Diagram: 飲むHA 叶う + うるおいンチャージ -->
+                                    <!-- Diagram: oral HA efficacy + hydration charge -->
                                     <div class="mt-8 md:mt-12 w-full">
                                         <p class="text-center text-gray-900 font-medium mb-1">飲むヒアルロン酸だから叶う</p>
                                         <p class="text-center text-xl md:text-2xl font-bold mb-6 md:mb-8" style="color: #C73E54;">内側からのうるおいンチャージ!</p>
@@ -550,7 +556,7 @@
             </div>
         </section>
 
-        <!-- Section: Product Gallery (SHIMISEI。飲む美容。+ carousel) -->
+        <!-- Section: Product gallery + carousel -->
         <section id="product-gallery" class="py-4 md:py-16 bg-white">
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto">
@@ -592,7 +598,7 @@
             </div>
         </section>
 
-        <!-- Section: Signature Section -->
+        <!-- Section: Signature -->
         <section id="signature" class="relative py-12 md:py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
@@ -605,6 +611,10 @@
                         
                         <div class="flex justify-center md:justify-start">
                             <img src="images/sign.png" alt="Signature" class="max-w-[200px] md:max-w-xs lg:max-w-md h-auto">
+                        </div>
+
+                        <div class="shop-buy-slot shop-buy-slot--signature mt-6 flex justify-center w-full">
+                            <button type="button" class="shop-trigger-btn" data-shop-trigger="shared">今すぐ購入</button>
                         </div>
                     </div>
                     
@@ -627,9 +637,9 @@
                         お客様の信頼は私たちの最優先事項です。</br> SHIMISEIは安全性と法的透明性が保証された美容サプリです。
                     </p>
                     
-                    <!-- Layout 2 columns -->
+                    <!-- Two-column layout -->
                     <div class="grid grid-cols-2 gap-4 md:gap-12 mb-8 md:mb-12">
-                        <!-- Left Column - Trademark Certificate -->
+                        <!-- Left column — trademark certificate -->
                         <div class="text-center" data-aos="fade-up" data-aos-delay="200">
                             <h3 class="text-[10px] md:text-xl lg:text-2xl font-bold text-gray-900 mb-4 md:mb-6">
                                 商標登録証明書<br>
@@ -640,7 +650,7 @@
                             </div>
                         </div>
                         
-                        <!-- Right Column - GMP Standard -->
+                        <!-- Right column — GMP standard -->
                         <div class="text-center" data-aos="fade-up" data-aos-delay="300">
                             <h3 class="text-[10px] md:text-xl lg:text-2xl font-bold text-gray-900 mb-4 md:mb-6">
                                 GMP製造基準<br>
@@ -652,7 +662,7 @@
                         </div>
                     </div>
                     
-                    <!-- Closing Text -->
+                    <!-- Closing text -->
                     <div class="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-delay="400">
                         <p class="text-sm md:text-lg text-gray-800 leading-relaxed italic">
                             私たちは製品を販売するだけでなく、日本政府が認めた数字と法的文書に基づいて安心を提供します。
@@ -665,7 +675,7 @@
             </div>
         </section>
 
-        <!-- Section 9: Voice Section -->
+        <!-- Section 9: Voice / testimonials -->
         <section id="voice" class="py-8 md:py-20 bg-white">
             <div class="container mx-auto px-4">
                 <!-- Title -->
@@ -673,9 +683,9 @@
                     <img src="images/voice.png" alt="VOICE モニターの声" class="mx-auto max-w-[250px] md:max-w-xs" loading="lazy" decoding="async">
                 </div>
                 
-                <!-- Grid -->
+                <!-- Card grid -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 max-w-6xl lg:max-w-5xl mx-auto mb-8">
-                    <!-- Mock Card 1 -->
+                    <!-- Mock card 1 -->
                     <div class="bg-[#F5E6E0] rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-aos="zoom-in" data-aos-delay="100">
                         <div class="aspect-square bg-gray-50 overflow-hidden">
                             <img src="images/shimisei_180.webp" alt="Testimonial 1" style="object-position: calc(50% + 12px) center;" class="w-full h-full object-cover" loading="lazy" decoding="async">
@@ -689,7 +699,7 @@
                         </div>
                     </div>
 
-                    <!-- Mock Card 2 -->
+                    <!-- Mock card 2 -->
                     <div class="bg-[#F5E6E0] rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
                         <div class="aspect-square bg-gray-50 overflow-hidden">
                             <img src="images/voice_2.webp?v=1.1" alt="Testimonial 2" class="w-full h-full object-cover" loading="lazy" decoding="async">
@@ -703,7 +713,7 @@
                         </div>
                     </div>
 
-                    <!-- Mock Card 3 -->
+                    <!-- Mock card 3 -->
                     <div class="bg-[#F5E6E0] rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-aos="zoom-in" data-aos-delay="300">
                         <div class="aspect-square bg-gray-50 overflow-hidden">
                             <img src="images/voice_3.webp?v=1.1" alt="Testimonial 3" class="w-full h-full object-cover" loading="lazy" decoding="async">
@@ -717,7 +727,7 @@
                         </div>
                     </div>
 
-                    <!-- Mock Card 4 -->
+                    <!-- Mock card 4 -->
                     <div class="bg-[#F5E6E0] rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-aos="zoom-in" data-aos-delay="400">
                         <div class="aspect-square bg-gray-50 overflow-hidden">
                             <img src="images/shimisei_60.webp" alt="Testimonial 4" style="object-position: calc(50% + 12px) center;" class="w-full h-full object-cover" loading="lazy" decoding="async">
@@ -799,7 +809,7 @@
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
                     <div class="grid grid-cols-2 gap-4 sm:gap-6 md:gap-12 items-start">
-                        <!-- Header spans full width (keeps image/map aligned on the second row) -->
+                        <!-- Full-width header (aligns image/map row) -->
                         <div class="col-span-2 space-y-3" data-aos="fade-up">
                             <h2 id="factory-headquarters-heading" class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 text-center">
                                 本社・製造拠点
@@ -892,10 +902,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 md:py-12 bg-[#F5E6E0]"> <!-- bg-[#E8E8E8] -->
+    <footer class="py-8 md:py-12 bg-[#F5E6E0]"> <!-- background: #F5E6E0 -->
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
-                <!-- Logo & Brand -->
+                <!-- Logo & brand -->
                 <div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">SHIMISEI</h3>
                     <p class="text-sm text-gray-600">
@@ -955,7 +965,37 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
+    <!-- Shop: product type picker (shared CTAs) -->
+    <div id="shop-picker-modal" class="shop-picker-modal" hidden aria-hidden="true">
+        <div class="shop-picker-modal__overlay" data-shop-picker-close tabindex="-1"></div>
+        <div class="shop-picker-modal__dialog" role="dialog" aria-labelledby="shop-picker-title" aria-modal="true">
+            <button type="button" class="shop-picker-modal__close-x" data-shop-picker-close aria-label="閉じる">&times;</button>
+            <h2 id="shop-picker-title" class="shop-picker-modal__title">製品をお選びください</h2>
+            <p class="shop-picker-modal__lead">ご希望のタイプを選択してから「次へ」を押してください。</p>
+            <div class="shop-picker-modal__pills" role="group" aria-label="製品タイプ">
+                <button type="button" class="shop-picker-modal__pill" data-product="pZip" aria-pressed="false">ジッパー（28粒）</button>
+                <button type="button" class="shop-picker-modal__pill" data-product="p60" aria-pressed="false">60粒（2週間分）</button>
+                <button type="button" class="shop-picker-modal__pill" data-product="p180" aria-pressed="false">180粒（6週間分）</button>
+            </div>
+            <div class="shop-picker-modal__actions">
+                <button type="button" class="shop-picker-modal__next" disabled>次へ</button>
+                <button type="button" class="shop-picker-modal__cancel" data-shop-picker-close>閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shop: variant + quantity modal (Japanese pills) -->
+    <div id="shop-checkout-modal" class="shop-checkout-modal" hidden aria-hidden="true">
+        <div class="shop-checkout-modal__overlay" data-shop-checkout-close tabindex="-1"></div>
+        <div class="shop-checkout-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="shop-checkout-title">
+            <button type="button" class="shop-checkout-modal__close-x" data-shop-checkout-close aria-label="閉じる">&times;</button>
+            <h2 id="shop-checkout-title" class="shop-checkout-modal__title">ご購入内容の選択</h2>
+            <div class="shop-checkout-modal__body"></div>
+            <button type="button" class="shop-checkout-modal__buy" disabled>購入する</button>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
     <button id="backToTop" class="fixed bottom-6 right-4 md:bottom-8 md:right-8 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300 opacity-0 invisible z-50">
         <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
@@ -964,6 +1004,8 @@
 
     <!-- AOS JS (Defer) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <!-- Shopify Buy Button -->
+    <script src="js/shopify-buy.js" defer></script>
     <!-- Custom JS (Defer) -->
     <script src="script.js" defer></script>
 </body>
